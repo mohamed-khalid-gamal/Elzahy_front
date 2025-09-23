@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://elzahytest.runasp.net",
+    "target": "http://elzahytest.runasp.net",
     "secure": true,
     "changeOrigin": true,
     "logLevel": "debug"

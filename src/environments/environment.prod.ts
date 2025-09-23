@@ -2,7 +2,7 @@ import { Environment } from './environment.interface';
 
 export const environment: Environment = {
   production: true,
-  apiBaseUrl: 'https://elzahytest.runasp.net/api',
+  apiBaseUrl: 'http://elzahytest.runasp.net/api',
   enableDevTools: false,
   logLevel: 'error' as const,
 
@@ -77,7 +77,7 @@ export const environment: Environment = {
   // External Services (Production URLs)
   external: {
     swaggerUrl: '', // Swagger disabled in production
-    healthCheckUrl: 'https://elzahytest.runasp.net/api/health'
+    healthCheckUrl: 'http://elzahytest.runasp.net/api/health'
   },
 
   // UI Configuration
