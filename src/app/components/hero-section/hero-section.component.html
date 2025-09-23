@@ -1,0 +1,52 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div
+    class="absolute inset-0 z-0"
+    [@parallaxBg]="{ value: 'moved', params: { yOffset: bgYOffset } }"
+  >
+    <div
+      class="w-full h-full bg-cover bg-center bg-no-repeat parallax-bg hero-bg"
+    ></div>
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+
+  <div
+    class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
+    [@parallaxContent]="{ value: 'moved', params: { yOffset: contentYOffset, opacity: contentOpacity } }"
+  >
+    <div class="glass-card rounded-3xl p-6 sm:p-12" [@fadeInUp]>
+      <h1
+        class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 text-shadow"
+        [@fadeInUpDelayed]
+      >
+        Building Tomorrow's
+        <span class="block bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Infrastructure</span>
+      </h1>
+      <p
+        class="text-base sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed"
+        [@fadeInUpDelayed2]
+      >
+        Leading construction and engineering solutions with decades of expertise in large-scale infrastructure projects.
+      </p>
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        [@fadeInUpDelayed3]
+      >
+        <a routerLink="/projects" class="w-full sm:w-auto glass-card hover:bg-white/30 text-white border-0 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">Explore Our Projects</a>
+        <a routerLink="/contact" class="w-full sm:w-auto glass-card hover:bg-white/20 text-white border-white/30 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+    [@fadeInFinal]
+  >
+    <button (click)="scrollToProjects()" class="scroll-indicator text-white hover:text-gray-300 transition-colors duration-300 hover:scale-110">
+      <span class="sr-only">Scroll to projects</span>
+      <!-- ChevronDown icon -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+  </div>
+</section>

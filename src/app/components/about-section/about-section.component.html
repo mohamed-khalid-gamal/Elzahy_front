@@ -1,0 +1,145 @@
+<section id="about" class="py-20 content-bg-wrap" *ngIf="!isPage">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 text-shadow">
+            About <span class="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">ELZAHY GROUP</span>
+          </h2>
+          <p class="text-gray-300 leading-relaxed mb-6">
+            For over two decades, ELZAHY GROUP has been a leader in construction and engineering. We specialize in large-scale infrastructure, turning ambitious visions into reality with precision and expertise.
+          </p>
+          <div class="grid grid-cols-2 gap-6 mb-8 text-gray-200">
+            <div class="flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Safety First
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                <path d="M10 6h4"/>
+                <path d="M10 10h4"/>
+                <path d="M10 14h4"/>
+                <path d="M10 18h4"/>
+              </svg>
+              Infrastructure
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="m22 21-3-3"/>
+                <path d="m16 16 3 3"/>
+              </svg>
+              Expert Team
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+              Advanced Tech
+            </div>
+          </div>
+          <button routerLink="/about" class="glass-card hover:bg-white/20 text-white border-0 w-full sm:w-auto">
+            Learn More About Us
+          </button>
+        </div>
+      </div>
+      <div class="relative h-80 lg:h-full w-full">
+        <img [src]="projectImages[0]" alt="About us image 1" class="absolute top-0 left-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-lg" />
+        <img [src]="projectImages[1]" alt="About us image 2" class="absolute bottom-0 right-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-lg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="py-20 content-bg-wrap" *ngIf="isPage">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-shadow">
+        About <span class="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">ELZAHY GROUP</span>
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+        Leading the construction industry with innovative solutions, exceptional quality, and unwavering commitment to excellence since our establishment.
+      </p>
+      <div class="section-divider mt-8"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+      <div class="space-y-6">
+        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 h-full">
+          <h3 class="text-3xl font-bold text-white mb-6">Our Story</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            ELZAHY GROUP has been at the forefront of construction and engineering excellence for over two decades. Founded with a vision to transform the infrastructure landscape, we have grown from a small construction company to a leading force in large-scale development projects.
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            Our expertise spans across excavation, foundation work, infrastructure development, and complex engineering solutions. We pride ourselves on delivering projects that not only meet but exceed client expectations while maintaining the highest standards of safety and quality.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            Today, we continue to push the boundaries of what's possible in construction, leveraging cutting-edge technology and innovative methodologies to build the infrastructure of tomorrow.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div *ngFor="let image of projectImages" class="glass-card-dark rounded-xl overflow-hidden">
+          <img [src]="image" alt="Project showcase" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div *ngFor="let feature of features" class="glass-card-dark rounded-2xl p-6 text-center h-full">
+        <div class="glass-effect-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg *ngIf="feature.icon === 'building-2'" class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+            <path d="M10 6h4"/>
+            <path d="M10 10h4"/>
+            <path d="M10 14h4"/>
+            <path d="M10 18h4"/>
+          </svg>
+          <svg *ngIf="feature.icon === 'users'" class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="m22 21-3-3"/>
+            <path d="m16 16 3 3"/>
+          </svg>
+          <svg *ngIf="feature.icon === 'wrench'" class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <svg *ngIf="feature.icon === 'shield'" class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">
+          {{ feature.title }}
+        </h3>
+        <p class="text-gray-300">
+          {{ feature.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <div class="glass-card-dark rounded-3xl p-8 sm:p-12">
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6">
+          Ready to Build Something Amazing?
+        </h3>
+        <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Let's discuss your next construction project and discover how ELZAHY GROUP can bring your vision to life with our expertise and dedication.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button routerLink="/contact" class="glass-card hover:bg-white/20 text-white border-0 px-8 py-4">
+            Start Your Project
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,146 @@
+<nav
+  [ngClass]="{'nav-glass-effect shadow-lg': isScrolled, 'bg-transparent': !isScrolled}"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [@slideDown]
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <a
+        routerLink="/"
+        class="flex items-center space-x-3"
+        (mouseenter)="onLogoHover(true)"
+        (mouseleave)="onLogoHover(false)"
+      >
+        <div [@logoHover]="logoHoverState">
+          <img src="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/8fe9a3082c4ca24be0cdf9ea71392a46.png" alt="ELZAHY GROUP Logo" class="h-10 sm:h-12 w-auto" />
+        </div>
+        <span class="font-bold text-lg sm:text-xl text-white text-shadow">ELZAHY GROUP</span>
+      </a>
+
+      <div class="hidden md:flex items-center space-x-1">
+        <a
+          *ngFor="let item of navItems"
+          [routerLink]="item.path"
+          routerLinkActive="nav-link-active !text-gray-800"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white"
+          (mouseenter)="onLinkHover(item.path, true)"
+          (mouseleave)="onLinkHover(item.path, false)"
+        >
+          <span [@linkHover]="linkHoverStates[item.path]">
+            {{item.label}}
+          </span>
+        </a>
+
+        <!-- Admin Dashboard Button - Only visible to authenticated admins -->
+        <a
+          *ngIf="isAuthenticated && isAdmin"
+          routerLink="/admin/dashboard"
+          routerLinkActive="nav-link-active !text-gray-800"
+          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white"
+        >
+          <span class="flex items-center space-x-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="7" height="9" x="3" y="3" rx="1"/>
+              <rect width="7" height="5" x="14" y="3" rx="1"/>
+              <rect width="7" height="9" x="14" y="12" rx="1"/>
+              <rect width="7" height="5" x="3" y="16" rx="1"/>
+            </svg>
+            <span>Dashboard</span>
+          </span>
+        </a>
+
+        <!-- Logout Button - Only visible to authenticated users -->
+        <button
+          *ngIf="isAuthenticated"
+          (click)="logout()"
+          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-red-500/20 hover:text-red-300"
+        >
+          <span class="flex items-center space-x-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+              <polyline points="16,17 21,12 16,7"/>
+              <line x1="21" x2="9" y1="12" y2="12"/>
+            </svg>
+            <span>Logout</span>
+          </span>
+        </button>
+
+        <div class="pl-4">
+          <a routerLink="/contact" class="glass-effect hover:bg-white/30 text-white border-white/20 font-semibold btn transition-all duration-300 hover:scale-105">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="md:hidden">
+        <button
+          (click)="toggleMobileMenu()"
+          class="text-white hover:bg-white/20 btn-ghost transition-all duration-300 hover:scale-110"
+          [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'"
+          title="Toggle mobile menu"
+        >
+          <svg *ngIf="!isMobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+          <svg *ngIf="isMobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="md:hidden nav-glass-effect" [@mobileMenuSlide]>
+    <div class="px-4 py-4 space-y-2">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="nav-link-active !text-gray-800"
+        [routerLinkActiveOptions]="{exact: true}"
+        (click)="closeMobileMenu()"
+        class="block w-full text-left font-medium py-3 px-4 rounded-lg transition-all duration-300 text-gray-200 hover:bg-white/20 hover:text-white hover:scale-105"
+      >
+        {{item.label}}
+      </a>
+
+      <!-- Admin Dashboard Button - Mobile -->
+      <a
+        *ngIf="isAuthenticated && isAdmin"
+        routerLink="/admin/dashboard"
+        routerLinkActive="nav-link-active !text-gray-800"
+        (click)="closeMobileMenu()"
+        class="block w-full text-left font-medium py-3 px-4 rounded-lg transition-all duration-300 text-gray-200 hover:bg-white/20 hover:text-white hover:scale-105"
+      >
+        <span class="flex items-center space-x-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="9" x="3" y="3" rx="1"/>
+            <rect width="7" height="5" x="14" y="3" rx="1"/>
+            <rect width="7" height="9" x="14" y="12" rx="1"/>
+            <rect width="7" height="5" x="3" y="16" rx="1"/>
+          </svg>
+          <span>Dashboard</span>
+        </span>
+      </a>
+
+      <!-- Logout Button - Mobile -->
+      <button
+        *ngIf="isAuthenticated"
+        (click)="logout()"
+        class="block w-full text-left font-medium py-3 px-4 rounded-lg transition-all duration-300 text-gray-200 hover:bg-red-500/20 hover:text-red-300 hover:scale-105"
+      >
+        <span class="flex items-center space-x-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16,17 21,12 16,7"/>
+            <line x1="21" x2="9" y1="12" y2="12"/>
+          </svg>
+          <span>Logout</span>
+        </span>
+      </button>
+
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="w-full glass-effect hover:bg-white/30 text-white border-white/20 mt-4 font-semibold btn transition-all duration-300 hover:scale-105">Contact Us</a>
+    </div>
+  </div>
+</nav>

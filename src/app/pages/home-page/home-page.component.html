@@ -1,0 +1,25 @@
+<app-page-wrapper
+  title="Premier Construction &amp; Engineering Solutions"
+  description="Leading construction company specializing in large-scale infrastructure projects, excavation, and engineering solutions. Delivering excellence in construction since our founding."
+>
+  <app-hero-section></app-hero-section>
+
+  <div class="bg-transparent">
+    <div id="projects"><app-projects-section [isPage]="false"></app-projects-section></div>
+    <div id="about"><app-about-section [isPage]="false"></app-about-section></div>
+    <div id="awards"><app-awards-section [isPage]="false"></app-awards-section></div>
+    <section class="py-20 content-bg-wrap">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="glass-card-dark rounded-3xl p-8 sm:p-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 text-shadow">Ready to Build Something <span class="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">Amazing</span>?</h2>
+            <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Let's discuss your next construction project and discover how ELZAHY GROUP can bring your vision to life with our expertise and dedication.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a routerLink="/contact" class="glass-card hover:bg-white/20 text-white border-0 px-8 py-4 text-lg rounded-xl">Start Your Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</app-page-wrapper>

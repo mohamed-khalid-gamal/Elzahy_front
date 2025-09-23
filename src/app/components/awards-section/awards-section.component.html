@@ -1,0 +1,137 @@
+<section id="awards" class="py-20 content-bg-wrap">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" *ngIf="!isPage">
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-shadow">
+        Industry <span class="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">Recognition</span>
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+        Our dedication to quality and safety is consistently recognized by top industry organizations.
+      </p>
+      <div class="section-divider mt-8"></div>
+    </div>
+
+    <!-- Loading state -->
+    <div *ngIf="loading" class="text-center py-12">
+      <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+      <p class="text-white mt-4">Loading awards...</p>
+    </div>
+
+    <!-- Error state -->
+    <div *ngIf="error && !loading" class="text-center py-12 glass-card-dark rounded-xl">
+      <p class="text-red-400 text-lg">{{ error }}</p>
+      <button
+        (click)="loadAwards()"
+        class="mt-4 glass-card-dark hover:bg-white/20 text-white border-0 px-6 py-2 btn transition-all duration-300">
+        Try Again
+      </button>
+    </div>
+
+    <!-- Featured awards (homepage) -->
+    <div *ngIf="!loading && !error && !isPage" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" [@staggerAwards]>
+      <div *ngFor="let award of featuredAwards" class="glass-card-dark rounded-2xl p-6 text-center">
+        <!-- Award image if available -->
+        <div *ngIf="hasImage(award)" class="mb-4 rounded-lg overflow-hidden">
+          <img
+            [src]="getAwardImageUrl(award)"
+            [alt]="award.name"
+            [title]="award.name"
+            (error)="$event.target.src='https://via.placeholder.com/400x200/1a1a1a/ffffff?text=Award'"
+            class="w-full h-32 object-cover"/>
+        </div>
+
+        <!-- Default icon if no image -->
+        <div *ngIf="!hasImage(award)" class="glass-effect-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+            <path d="M4 22h16"/>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-white mb-2">{{ award.name }}</h3>
+        <p class="font-medium text-gray-300 mb-3">{{ award.givenBy }} - {{ formatAwardDate(award.dateReceived) }}</p>
+        <p class="text-gray-400 text-sm" *ngIf="award.description">{{ award.description }}</p>
+      </div>
+    </div>
+
+    <!-- No awards message for homepage -->
+    <div *ngIf="!loading && !error && !isPage && featuredAwards.length === 0" class="text-center py-12 glass-card-dark rounded-xl">
+      <p class="text-xl text-gray-300">Awards coming soon!</p>
+    </div>
+
+    <!-- View all awards button (homepage) -->
+    <div *ngIf="!loading && !error && !isPage && awards.length > 0" class="text-center">
+      <a routerLink="/awards" class="inline-block glass-card-dark hover:bg-white/20 text-white border-0 px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
+        See All Awards
+      </a>
+    </div>
+
+    <!-- All awards (awards page) -->
+    <div *ngIf="!loading && !error && isPage" class="space-y-8">
+      <div *ngFor="let award of getDisplayAwards(); let i = index" class="flex flex-col lg:flex-row items-center gap-8" [ngClass]="{ 'lg:flex-row-reverse': i % 2 === 1 }">
+        <div class="flex-1 w-full">
+          <div class="glass-card-dark rounded-2xl overflow-hidden shadow-lg">
+            <img
+              [src]="getAwardImageUrl(award)"
+              [alt]="award.name"
+              [title]="award.name"
+              (error)="$event.target.src='https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Award'"
+              class="w-full h-64 lg:h-80 object-cover"/>
+          </div>
+        </div>
+        <div class="flex-1 text-center lg:text-left w-full">
+          <div class="glass-card-dark rounded-2xl p-6 sm:p-8 h-full">
+            <div class="flex items-center justify-center lg:justify-start mb-4">
+              <div class="glass-effect-dark rounded-full p-3 mr-4">
+                <svg class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                  <path d="M4 22h16"/>
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+              </div>
+              <span class="glass-effect px-4 py-2 rounded-full text-sm font-semibold text-gray-200">{{ formatAwardDate(award.dateReceived) }}</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">{{ award.name }}</h3>
+            <p class="text-lg font-medium text-gray-300 mb-4">{{ award.givenBy }}</p>
+            <p class="text-gray-300 leading-relaxed" *ngIf="award.description">{{ award.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- No awards message for awards page -->
+      <div *ngIf="getDisplayAwards().length === 0" class="text-center py-12 glass-card-dark rounded-xl">
+        <p class="text-xl text-gray-300">No awards available yet.</p>
+      </div>
+
+      <!-- Statistics section (awards page) -->
+      <div class="mt-20" *ngIf="awards.length > 0">
+        <div class="glass-card-dark rounded-3xl p-8">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white mb-2">{{ awards.length }}+</div>
+              <div class="text-gray-300 text-sm sm:text-base">Industry Awards</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white mb-2">98%</div>
+              <div class="text-gray-300 text-sm sm:text-base">Client Satisfaction</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white mb-2">100%</div>
+              <div class="text-gray-300 text-sm sm:text-base">Safety Record</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold text-white mb-2">25+</div>
+              <div class="text-gray-300 text-sm sm:text-base">Years Excellence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
