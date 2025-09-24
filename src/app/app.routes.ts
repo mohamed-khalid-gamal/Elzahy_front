@@ -1,12 +1,15 @@
+import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { adminGuard } from './core/guards/admin.guard';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
   // Public routes
   {
     path: '',
-    loadComponent: () => import('./pages/home-page/home-page.component').then(m => m.HomePageComponent)
+    component: HomePageComponent
+    // loadComponent: () => import('./pages/home-page/home-page.component').then(m => m.HomePageComponent)
   },
   {
     path: 'projects',

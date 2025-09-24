@@ -25,6 +25,6 @@ bootstrapApplication(AppComponent, {
   const loader = document.getElementById('app-loader');
   if (loader) {
     loader.classList.add('loaded');
-    setTimeout(() => loader.remove(), 3000); // allow transition
+    setTimeout(() => loader.remove(), 400); // allow transition
   }
 }).catch((err: unknown) => console.error(err));
