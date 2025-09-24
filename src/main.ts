@@ -20,4 +20,11 @@ bootstrapApplication(AppComponent, {
       closeButton: true,
     }),
   ],
+}).then(() => {
+  // Remove/Hide splash loader after bootstrap
+  const loader = document.getElementById('app-loader');
+  if (loader) {
+    loader.classList.add('loaded');
+    setTimeout(() => loader.remove(), 400); // allow transition
+  }
 }).catch((err: unknown) => console.error(err));
