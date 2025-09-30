@@ -1,15 +1,18 @@
-import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AuthService } from '../../core/services/auth.service';
 import { TokenService } from '../../core/services/token.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { Subscription } from 'rxjs';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, TranslateModule, LanguageSwitcherComponent],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
   animations: [
@@ -51,7 +54,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private translate: TranslateService,
+    private cdr: ChangeDetectorRef,
+    private languageService: LanguageService
   ) {}
 
   ngOnInit() {
@@ -71,6 +77,12 @@ export class NavigationComponent implements OnInit, OnDestroy {
       this.checkAuthStatus();
     });
     this.subscriptions.push(userSub);
+
+    // Update view when language changes (ensure translate pipe refreshes)
+    const langSub = this.translate.onLangChange.subscribe(() => {
+      this.cdr.detectChanges();
+    });
+    this.subscriptions.push(langSub);
   }
 
   ngOnDestroy() {
@@ -87,11 +99,15 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.isScrolled = window.scrollY > 50;
   }
 
+  get isRtl(): boolean {
+    return this.languageService.isRTL();
+  }
+
   navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Projects', path: '/projects' },
-    { label: 'Awards', path: '/awards' },
-    { label: 'About Us', path: '/about' },
+    { label: 'nav.home', path: '/' },
+    { label: 'nav.projects', path: '/projects' },
+    { label: 'nav.awards', path: '/awards' },
+    { label: 'nav.about', path: '/about' },
   ];
 
   toggleMobileMenu() {

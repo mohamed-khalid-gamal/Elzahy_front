@@ -1,12 +1,13 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './hero-section.component.html',
   animations: [
     trigger('fadeInUp', [
@@ -73,7 +74,8 @@ export class HeroSectionComponent implements OnInit {
   private updateParallax() {
     this.bgYOffset = -(this.scrollY * 0.33); // Similar to y2 transform in React
     this.contentYOffset = -(this.scrollY * 0.17); // Similar to y1 transform in React
-    this.contentOpacity = Math.max(0.3, 1 - (this.scrollY / 300 * 0.7)); // Similar to opacity transform in React
+    // Make the fade out much more gradual and start later
+    this.contentOpacity = Math.max(0.1, 1 - (this.scrollY / 900 * 0.9)); // Fade starts at 800px scroll instead of 300px
   }
 
   scrollToProjects() {

@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { trigger, style, transition, animate, stagger, query } from '@angular/animations';
 
 @Component({
   selector: 'app-about-section',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './about-section.component.html',
   animations: [
     trigger('fadeInUp', [
@@ -33,23 +34,23 @@ export class AboutSectionComponent {
   features = [
     {
       icon: 'building-2',
-      title: "Infrastructure Excellence",
-      description: "Specializing in large-scale infrastructure projects with cutting-edge engineering solutions"
+      titleKey: 'about.featuresCards.infrastructure.title',
+      descriptionKey: 'about.featuresCards.infrastructure.description'
     },
     {
       icon: 'users',
-      title: "Expert Team",
-      description: "Highly skilled professionals with decades of combined experience in construction and engineering"
+      titleKey: 'about.featuresCards.team.title',
+      descriptionKey: 'about.featuresCards.team.description'
     },
     {
       icon: 'wrench',
-      title: "Advanced Equipment",
-      description: "State-of-the-art machinery and tools ensuring efficient and precise project execution"
+      titleKey: 'about.featuresCards.equipment.title',
+      descriptionKey: 'about.featuresCards.equipment.description'
     },
     {
       icon: 'shield',
-      title: "Safety First",
-      description: "Unwavering commitment to safety standards and environmental responsibility in all operations"
+      titleKey: 'about.featuresCards.safety.title',
+      descriptionKey: 'about.featuresCards.safety.description'
     }
   ];
 

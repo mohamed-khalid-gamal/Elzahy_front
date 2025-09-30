@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://elzahytest.runasp.net",
+    "target": "https://elzahygroupback.premiumasp.net",
     "secure": true,
     "changeOrigin": true,
     "logLevel": "debug"

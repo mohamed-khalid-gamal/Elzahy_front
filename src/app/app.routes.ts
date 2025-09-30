@@ -5,27 +5,31 @@ import { adminGuard } from './core/guards/admin.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
-  // Public routes
+  // Public routes - Home page should be eagerly loaded for LCP optimization
   {
     path: '',
-    component: HomePageComponent
-    // loadComponent: () => import('./pages/home-page/home-page.component').then(m => m.HomePageComponent)
+    component: HomePageComponent,
+    data: { preload: 'critical', reuse: true }
   },
   {
     path: 'projects',
-    loadComponent: () => import('./pages/projects-page/projects-page.component').then(m => m.ProjectsPageComponent)
+    loadComponent: () => import('./pages/projects-page/projects-page.component').then(m => m.ProjectsPageComponent),
+    data: { preload: 'important' }
   },
   {
     path: 'project/:id',
-    loadComponent: () => import('./pages/project-details-page/project-details-page.component').then(m => m.ProjectDetailsPageComponent)
+    loadComponent: () => import('./pages/project-details-page/project-details-page.component').then(m => m.ProjectDetailsPageComponent),
+    data: { preload: 'important' }
   },
   {
     path: 'awards',
-    loadComponent: () => import('./pages/awards-page/awards-page.component').then(m => m.AwardsPageComponent)
+    loadComponent: () => import('./pages/awards-page/awards-page.component').then(m => m.AwardsPageComponent),
+    data: { preload: true }
   },
   {
     path: 'about',
-    loadComponent: () => import('./pages/about-page/about-page.component').then(m => m.AboutPageComponent)
+    loadComponent: () => import('./pages/about-page/about-page.component').then(m => m.AboutPageComponent),
+    data: { preload: true }
   },
   {
     path: 'contact',

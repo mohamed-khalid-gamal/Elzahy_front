@@ -5,11 +5,12 @@ import { trigger, style, transition, animate, stagger, query } from '@angular/an
 import { AwardsService } from '../../services/awards.service';
 import { AwardDto } from '../../shared/types/api.types';
 import { Subject, takeUntil, catchError, of } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-awards-section',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './awards-section.component.html',
   animations: [
     trigger('fadeInUp', [
@@ -91,12 +92,12 @@ export class AwardsSectionComponent implements OnInit, OnDestroy {
       return award.imageUrl;
     }
 
-    // Use the service method to get image URL, or return placeholder
+    // Use the service method to get image URL, or return local fallback
     try {
       return this.awardsService.getAwardImageUrl(award.id);
     } catch {
-      // Return a placeholder image URL
-      return 'https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Award';
+      // Return a local fallback image to avoid external requests
+      return '/public/no-image.svg';
     }
   }
 

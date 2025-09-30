@@ -1,7 +1,13 @@
 <main class="pt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-shadow">{{ title }}</h1>
-    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">{{ description }}</p>
+    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-shadow">
+      <ng-container *ngIf="titleKey; else plainTitle">{{ titleKey | translate }}</ng-container>
+      <ng-template #plainTitle>{{ title }}</ng-template>
+    </h1>
+    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+      <ng-container *ngIf="descriptionKey; else plainDesc">{{ descriptionKey | translate }}</ng-container>
+      <ng-template #plainDesc>{{ description }}</ng-template>
+    </p>
     <div class="section-divider mt-8"></div>
   </div>
   <ng-content></ng-content>

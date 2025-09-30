@@ -1,0 +1,48 @@
+{
+  "name": "bundlemon",
+  "baseDir": "./dist/project-angular",
+  "files": [
+    {
+      "path": "**/*.js",
+      "maxSize": "500kb",
+      "maxPercentIncrease": 10
+    },
+    {
+      "path": "**/*.css",
+      "maxSize": "50kb",
+      "maxPercentIncrease": 10
+    },
+    {
+      "path": "main*.js",
+      "name": "Main Bundle",
+      "maxSize": "250kb"
+    },
+    {
+      "path": "vendor*.js",
+      "name": "Vendor Bundle",
+      "maxSize": "300kb"
+    },
+    {
+      "path": "polyfills*.js",
+      "name": "Polyfills Bundle",
+      "maxSize": "50kb"
+    },
+    {
+      "path": "styles*.css",
+      "name": "Global Styles",
+      "maxSize": "30kb"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Critical Resources",
+      "files": ["main*.js", "styles*.css"],
+      "maxSize": "300kb"
+    },
+    {
+      "name": "All JS Bundles",
+      "files": ["**/*.js"],
+      "maxSize": "600kb"
+    }
+  ]
+}

@@ -2,7 +2,18 @@
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
+    "./src/**/*.component.html",
+    "./src/**/*.component.ts"
   ],
+  safelist: [
+        'glass-effect',
+        'glass-card',
+        'nav-glass-effect',
+        'hero-gradient',
+        'text-shadow',
+        'defer-load',
+        'loaded'
+      ],
   theme: {
     container: {
 			center: true,

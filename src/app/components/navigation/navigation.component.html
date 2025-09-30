@@ -4,31 +4,38 @@
   [@slideDown]
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex items-center h-20 justify-between" [ngClass]="{ 'flex-row-reverse': isRtl }">
       <a
         routerLink="/"
-        class="flex items-center space-x-3"
+        class="flex items-center" [ngClass]="{ 'space-x-3': !isRtl, 'space-x-reverse space-x-3': isRtl }"
         (mouseenter)="onLogoHover(true)"
         (mouseleave)="onLogoHover(false)"
       >
         <div [@logoHover]="logoHoverState">
-          <img src="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/8fe9a3082c4ca24be0cdf9ea71392a46.png" alt="ELZAHY GROUP Logo" class="h-10 sm:h-12 w-auto" />
+          <img
+            src="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/8fe9a3082c4ca24be0cdf9ea71392a46.png"
+            [alt]="'header.companyLogo' | translate"
+            class="h-10 sm:h-12 w-auto max-w-12 max-h-12"
+            loading="eager"
+            decoding="async"
+            width="48"
+            height="48" />
         </div>
-        <span class="font-bold text-lg sm:text-xl text-white text-shadow">ELZAHY GROUP</span>
+        <span class="font-bold text-lg sm:text-xl text-white text-shadow">{{ 'header.companyName' | translate }}</span>
       </a>
 
-      <div class="hidden md:flex items-center space-x-1">
+      <div class="hidden md:flex items-center" [ngClass]="{ 'space-x-1': !isRtl, 'space-x-reverse space-x-1': isRtl }">
         <a
           *ngFor="let item of navItems"
           [routerLink]="item.path"
           routerLinkActive="nav-link-active !text-gray-800"
           [routerLinkActiveOptions]="{exact: true}"
-          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white"
+          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white rounded-l rounded-r "
           (mouseenter)="onLinkHover(item.path, true)"
           (mouseleave)="onLinkHover(item.path, false)"
         >
           <span [@linkHover]="linkHoverStates[item.path]">
-            {{item.label}}
+            {{ item.label | translate }}
           </span>
         </a>
 
@@ -46,7 +53,7 @@
               <rect width="7" height="9" x="14" y="12" rx="1"/>
               <rect width="7" height="5" x="3" y="16" rx="1"/>
             </svg>
-            <span>Dashboard</span>
+            <span>{{ 'nav.dashboard' | translate }}</span>
           </span>
         </a>
 
@@ -62,21 +69,26 @@
               <polyline points="16,17 21,12 16,7"/>
               <line x1="21" x2="9" y1="12" y2="12"/>
             </svg>
-            <span>Logout</span>
+            <span>{{ 'nav.logout' | translate }}</span>
           </span>
         </button>
 
+        <!-- Language Switcher -->
+        <div class="pl-2">
+          <app-language-switcher></app-language-switcher>
+        </div>
+
         <div class="pl-4">
-          <a routerLink="/contact" class="glass-effect hover:bg-white/30 text-white border-white/20 font-semibold btn transition-all duration-300 hover:scale-105">Contact Us</a>
+          <a routerLink="/contact" class="glass-effect hover:bg-white/30 text-white border-white/20 font-semibold btn transition-all duration-300 hover:scale-105">{{ 'nav.contact' | translate }}</a>
         </div>
       </div>
 
-      <div class="md:hidden">
+      <div class="md:hidden" [ngClass]="{ 'ml-auto': !isRtl, 'mr-auto': isRtl }">
         <button
           (click)="toggleMobileMenu()"
           class="text-white hover:bg-white/20 btn-ghost transition-all duration-300 hover:scale-110"
-          [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'"
-          title="Toggle mobile menu"
+          [attr.aria-label]="(isMobileMenuOpen ? 'nav.closeMenu' : 'nav.openMenu') | translate"
+          [title]="'nav.toggleMenu' | translate"
         >
           <svg *ngIf="!isMobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" x2="20" y1="6" y2="6"/>
@@ -93,16 +105,16 @@
   </div>
 
   <div *ngIf="isMobileMenuOpen" class="md:hidden nav-glass-effect" [@mobileMenuSlide]>
-    <div class="px-4 py-4 space-y-2">
+    <div class="px-4 py-4 space-y-2" [ngClass]="{ 'text-right': isRtl, 'text-left': !isRtl }">
       <a
         *ngFor="let item of navItems"
         [routerLink]="item.path"
         routerLinkActive="nav-link-active !text-gray-800"
         [routerLinkActiveOptions]="{exact: true}"
         (click)="closeMobileMenu()"
-        class="block w-full text-left font-medium py-3 px-4 rounded-lg transition-all duration-300 text-gray-200 hover:bg-white/20 hover:text-white hover:scale-105"
+        class="block w-full font-medium py-3 px-4 rounded-lg transition-all duration-300 text-gray-200 hover:bg-white/20 hover:text-white hover:scale-105"
       >
-        {{item.label}}
+        {{ item.label | translate }}
       </a>
 
       <!-- Admin Dashboard Button - Mobile -->
@@ -120,7 +132,7 @@
             <rect width="7" height="9" x="14" y="12" rx="1"/>
             <rect width="7" height="5" x="3" y="16" rx="1"/>
           </svg>
-          <span>Dashboard</span>
+          <span>{{ 'nav.dashboard' | translate }}</span>
         </span>
       </a>
 
@@ -136,11 +148,16 @@
             <polyline points="16,17 21,12 16,7"/>
             <line x1="21" x2="9" y1="12" y2="12"/>
           </svg>
-          <span>Logout</span>
+          <span>{{ 'nav.logout' | translate }}</span>
         </span>
       </button>
 
-      <a routerLink="/contact" (click)="closeMobileMenu()" class="w-full glass-effect hover:bg-white/30 text-white border-white/20 mt-4 font-semibold btn transition-all duration-300 hover:scale-105">Contact Us</a>
+      <!-- Language Switcher - Mobile -->
+      <div class="px-4 py-2">
+        <app-language-switcher></app-language-switcher>
+      </div>
+
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="w-full glass-effect hover:bg-white/30 text-white border-white/20 mt-4 font-semibold btn transition-all duration-300 hover:scale-105">{{ 'nav.contact' | translate }}</a>
     </div>
   </div>
 </nav>

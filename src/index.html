@@ -1,11 +1,95 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>ProjectAngular</title>
+  <title>ELZAHY GROUP - Leading Construction & Engineering Excellence</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/logo.jpg">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="ELZAHY GROUP has been at the forefront of construction and engineering excellence for over two decades. Specializing in large-scale infrastructure projects, excavation, foundation work, and complex engineering solutions.">
+  <meta name="keywords" content="construction, engineering, infrastructure, excavation, foundation work, ELZAHY GROUP, building construction, civil engineering, project management">
+  <meta name="author" content="ELZAHY GROUP">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="ELZAHY GROUP - Leading Construction & Engineering Excellence">
+  <meta property="og:description" content="Transform your infrastructure dreams into reality with ELZAHY GROUP. Over two decades of construction and engineering excellence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elzahygroup.com">
+  <meta property="og:image" content="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/87991aa4701e3978e0d79a7d8f421a6f.jpg">
+  <meta property="og:site_name" content="ELZAHY GROUP">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@elzahygroup">
+  <meta name="twitter:creator" content="@elzahygroup">
+  <meta name="twitter:title" content="ELZAHY GROUP - Leading Construction & Engineering Excellence">
+  <meta name="twitter:description" content="Transform your infrastructure dreams into reality with ELZAHY GROUP. Over two decades of construction and engineering excellence.">
+  <meta name="twitter:image" content="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/87991aa4701e3978e0d79a7d8f421a6f.jpg">
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="geo.region" content="REGION">
+  <meta name="geo.placename" content="CITY">
+  <meta name="geo.position" content="LATITUDE;LONGITUDE">
+  <meta name="ICBM" content="LATITUDE, LONGITUDE">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://elzahygroup.com">
+
+  <!-- Performance optimizations: Only critical preconnects (limit to 4) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://horizons-cdn.hostinger.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+  <!-- DNS prefetch for less critical domains -->
+  <link rel="dns-prefetch" href="https://elzahygroupback.premiumasp.net">
+
+  <!-- Preload LCP hero image for faster loading -->
+  <link rel="preload" href="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/87991aa4701e3978e0d79a7d8f421a6f.jpg" as="image" fetchpriority="high">
+
+  <!-- Meta tags for better caching -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  <meta name="theme-color" content="#101828">
+
+  <!-- Optimized Google Fonts loading -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Preload critical styles -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+  <!-- Critical CSS for above-the-fold content - optimized for LCP -->
+  <style>
+    /* Critical styles to prevent render blocking */
+    body { font-family: Inter, sans-serif; background-color: #101828; color: #fff; margin: 0; overflow-x: hidden; }
+
+    /* Hero section critical styles for faster LCP */
+    .hero-section { min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-section img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; will-change: transform; }
+    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.5) 100%); z-index: 1; }
+
+    /* Glass effects for immediate visual impact */
+    .glass-card { background: rgba(255,255,255,0.08); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .glass-effect { background: rgba(255,255,255,0.05); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.15); }
+    .nav-glass-effect { background: rgba(0,0,0,0.25); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* Navigation critical styles */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: all 0.3s ease; }
+
+    /* Text utilities */
+    .text-shadow { text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+
+    /* Hide non-critical content initially */
+    .defer-load { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .defer-load.loaded { opacity: 1; transform: translateY(0); }
+  </style>
   <!-- Splash / Loader Styles -->
   <style>
     #app-loader {

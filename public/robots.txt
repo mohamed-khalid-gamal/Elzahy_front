@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers to access the site
+Allow: /home
+Allow: /projects
+Allow: /project-details/*
+Allow: /awards
+Allow: /about
+Allow: /contact
+
+# Disallow admin areas and sensitive routes
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+Disallow: /auth/*
+Disallow: /login
+Disallow: /register
+
+# Disallow temporary or test files
+Disallow: *.js$
+Disallow: *.css$
+Disallow: *.map$
+
+# Point to sitemap
+Sitemap: https://elzahygroup.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

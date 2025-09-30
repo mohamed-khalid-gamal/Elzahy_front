@@ -12,6 +12,20 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+// Performance optimizations
+import compression from 'compression';
+
+// Enable gzip compression
+app.use(compression({
+  level: 6,
+  filter: (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  }
+}));
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -25,8 +39,26 @@ const angularApp = new AngularNodeAppEngine();
  */
 
 /**
- * Serve static files from /browser
+ * Serve static files from /browser with optimized caching
  */
+app.use(express.static(browserDistFolder, {
+  maxAge: '1y',
+  etag: false,
+  setHeaders: (res, path) => {
+    // Set cache headers based on file type
+    if (path.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    } else if (path.match(/\.(js|css|woff2?|jpg|jpeg|png|webp|svg)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+
+    // Add security headers
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+  }
+}));
+
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',

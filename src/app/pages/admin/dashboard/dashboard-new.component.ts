@@ -198,13 +198,16 @@ export class DashboardComponent implements OnInit {
   }
 
   private loadStats() {
+    const emptyPaginatedResponse = { data: [], totalCount: 0, pageNumber: 1, pageSize: 10, totalPages: 0, hasPrevious: false, hasNext: false };
+
     forkJoin({
-      projects: this.projectsService.getProjects().pipe(catchError(() => of([]))),
+      projects: this.projectsService.getProjects().pipe(catchError(() => of(emptyPaginatedResponse))),
       awards: this.awardsService.getAwards().pipe(catchError(() => of([]))),
       messages: this.contactService.getMessages().pipe(catchError(() => of({ data: [] })))
     }).subscribe({
       next: (data) => {
-        this.stats.projectsCount = data.projects.length;
+        // Handle paginated projects response
+        this.stats.projectsCount = Array.isArray(data.projects) ? data.projects.length : data.projects.totalCount;
         this.stats.awardsCount = data.awards.length;
         // Filter unread messages
         const unreadMessages = data.messages.data.filter((msg: any) => !msg.isRead);

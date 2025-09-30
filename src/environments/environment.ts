@@ -28,8 +28,8 @@ export const environment: Environment = {
       }
     },
     projects: {
-      base: '/projects',
-      byStatus: '/projects/status'
+      base: '/Projects',
+      byStatus: '/Projects/by-status'
     },
     awards: {
       base: '/awards'

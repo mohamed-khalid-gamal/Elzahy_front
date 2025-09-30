@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { trigger, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './footer.component.html',
   animations: [
     trigger('fadeInUp', [

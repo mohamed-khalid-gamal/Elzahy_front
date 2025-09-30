@@ -3,22 +3,29 @@
     <div class="text-center">
       <div class="flex items-center justify-center space-x-3 mb-4" [@fadeInUp]>
         <a routerLink="/">
-          <img src="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/8fe9a3082c4ca24be0cdf9ea71392a46.png" alt="ELZAHY GROUP Logo" class="h-12 w-auto" />
+          <img
+            src="https://horizons-cdn.hostinger.com/1ae29a5c-5737-4779-81b2-240c63e964f7/8fe9a3082c4ca24be0cdf9ea71392a46.png"
+            [alt]="'header.companyLogo' | translate"
+            class="h-12 w-auto max-w-12 max-h-12"
+            loading="eager"
+            decoding="async"
+            width="48"
+            height="48" />
         </a>
       </div>
       <p class="mb-6 max-w-md mx-auto" [@fadeInUpDelayed]>
-        Building tomorrow's infrastructure with excellence and innovation.
+        {{ 'footer.company.description' | translate }}
       </p>
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8" [@fadeInUpDelayed2]>
-        <a routerLink="/" class="hover:text-white transition-colors">Home</a>
-        <a routerLink="/projects" class="hover:text-white transition-colors">Projects</a>
-        <a routerLink="/awards" class="hover:text-white transition-colors">Awards</a>
-        <a routerLink="/about" class="hover:text-white transition-colors">About Us</a>
-        <a routerLink="/contact" class="hover:text-white transition-colors">Contact</a>
+        <a routerLink="/" class="hover:text-white transition-colors">{{ 'nav.home' | translate }}</a>
+        <a routerLink="/projects" class="hover:text-white transition-colors">{{ 'nav.projects' | translate }}</a>
+        <a routerLink="/awards" class="hover:text-white transition-colors">{{ 'nav.awards' | translate }}</a>
+        <a routerLink="/about" class="hover:text-white transition-colors">{{ 'nav.about' | translate }}</a>
+        <a routerLink="/contact" class="hover:text-white transition-colors">{{ 'nav.contact' | translate }}</a>
       </div>
       <div class="section-divider mb-6"></div>
       <p class="text-sm text-gray-400 pb-8">
-        © 2025 ELZAHY GROUP. All rights reserved. | Excellence in Construction & Engineering
+        {{ 'footer.copyright' | translate }}
       </p>
     </div>
   </div>

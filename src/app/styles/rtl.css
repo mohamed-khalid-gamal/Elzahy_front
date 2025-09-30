@@ -1,0 +1,286 @@
+/* RTL (Right-to-Left) Support */
+
+/* Global RTL Styles */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Navigation RTL adjustments */
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --space-x-reverse: 1;
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --space-x-reverse: 1;
+}
+
+/* Text alignment for RTL */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Margin and padding adjustments */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .pl-2 {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .pl-4 {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .pr-2 {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+[dir="rtl"] .pr-4 {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+/* Language switcher dropdown positioning for RTL */
+[dir="rtl"] .language-switcher .dropdown {
+  left: 0;
+  right: auto;
+}
+
+/* Navigation logo and text spacing for RTL */
+[dir="rtl"] .logo-container {
+  flex-direction: row-reverse;
+}
+
+/* Mobile menu adjustments for RTL */
+[dir="rtl"] .mobile-menu {
+  text-align: right;
+}
+
+/* Button and form element adjustments */
+[dir="rtl"] .btn {
+  text-align: center;
+}
+
+/* Icon rotation for RTL */
+[dir="rtl"] .chevron-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .arrow-right {
+  transform: scaleX(-1);
+}
+
+/* Card and content layout adjustments */
+[dir="rtl"] .card {
+  text-align: right;
+}
+
+[dir="rtl"] .card-content {
+  text-align: right;
+}
+
+/* Form elements RTL support */
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  text-align: right;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder {
+  text-align: right;
+}
+
+/* List and menu items */
+[dir="rtl"] ul,
+[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] li {
+  text-align: right;
+}
+
+/* Specific component adjustments */
+[dir="rtl"] .hero-section {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-section h1,
+[dir="rtl"] .hero-section h2,
+[dir="rtl"] .hero-section p {
+  text-align: right;
+}
+
+[dir="rtl"] .features-grid {
+  text-align: right;
+}
+
+[dir="rtl"] .project-card {
+  text-align: right;
+}
+
+[dir="rtl"] .footer {
+  text-align: right;
+}
+
+/* Animation and transition adjustments for RTL */
+[dir="rtl"] .slide-in-left {
+  animation-name: slideInRight;
+}
+
+[dir="rtl"] .slide-in-right {
+  animation-name: slideInLeft;
+}
+
+/* Modal and overlay adjustments */
+[dir="rtl"] .modal {
+  text-align: right;
+}
+
+[dir="rtl"] .modal-header {
+  text-align: right;
+}
+
+[dir="rtl"] .modal-body {
+  text-align: right;
+}
+
+/* Table RTL support */
+[dir="rtl"] table {
+  text-align: right;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+/* Breadcrumb RTL support */
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb-separator {
+  transform: scaleX(-1);
+}
+
+/* Search and filter components */
+[dir="rtl"] .search-input {
+  text-align: right;
+}
+
+[dir="rtl"] .filter-dropdown {
+  text-align: right;
+}
+
+/* Custom logical properties for better RTL support */
+.margin-inline-start {
+  margin-inline-start: 1rem;
+}
+
+.margin-inline-end {
+  margin-inline-end: 1rem;
+}
+
+.padding-inline-start {
+  padding-inline-start: 1rem;
+}
+
+.padding-inline-end {
+  padding-inline-end: 1rem;
+}
+
+.border-inline-start {
+  border-inline-start: 1px solid;
+}
+
+.border-inline-end {
+  border-inline-end: 1px solid;
+}
+
+/* Typography adjustments for Arabic */
+[dir="rtl"] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial Unicode MS', sans-serif;
+}
+
+/* Improve Arabic text rendering */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+[dir="rtl"] p {
+  line-height: 1.6;
+}
+
+/* Number and date formatting adjustments */
+[dir="rtl"] .number,
+[dir="rtl"] .date,
+[dir="rtl"] .currency {
+  unicode-bidi: embed;
+  direction: ltr;
+  text-align: left;
+  display: inline-block;
+}
+
+/* Language switcher specific RTL adjustments */
+[dir="rtl"] .language-switcher .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .language-switcher .language-option {
+  text-align: right;
+}
+
+/* Animation keyframes for RTL */
+@keyframes slideInRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

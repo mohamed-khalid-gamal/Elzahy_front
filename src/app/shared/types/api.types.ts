@@ -10,16 +10,7 @@ export interface ErrorDetails {
   internalCode?: number;
 }
 
-// Pagination Types
-export interface PagedResponse<T> {
-  data: T[];
-  totalCount: number;
-  pageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  hasPrevious: boolean;
-  hasNext: boolean;
-}
+// Pagination Types (replaced by PaginatedResponse with enhanced features)
 
 // Authentication Types
 export interface LoginRequestDto {
@@ -181,15 +172,61 @@ export enum ProjectStatus {
   Past = 2
 }
 
-// Project Image DTOs
+// Project Image DTOs (File System Storage)
 export interface ProjectImageDto {
   id: string;
-  imageData: string; // Base64 encoded image data
+  createdAt: string;
+  updatedAt: string;
+  imageUrl: string; // Direct URL to image instead of base64 data
   contentType: string; // MIME type like "image/jpeg"
   fileName: string; // Original filename
+  fileSize: number; // File size in bytes
   description?: string;
   isMainImage: boolean;
   sortOrder: number;
+  projectId: string;
+  createdByName?: string;
+}
+
+// Project Video DTOs (File System Storage)
+export interface ProjectVideoDto {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  videoUrl: string; // Direct URL to video
+  contentType: string; // MIME type like "video/mp4"
+  fileName: string; // Original filename
+  fileSize: number; // File size in bytes
+  description?: string;
+  thumbnailUrl?: string; // Optional thumbnail URL
+  isMainVideo: boolean;
+  sortOrder: number;
+  projectId: string;
+  createdByName?: string;
+  duration?: number; // Video duration in seconds (optional)
+}
+
+// Translation DTOs for Multilingual Support
+export interface ProjectTranslationDto {
+  language: string; // "ar" or "en"
+  direction: "LTR" | "RTL";
+  title: string;
+  description: string;
+  location?: string;
+  propertyType?: string;
+}
+
+// Enhanced Pagination Response
+export interface PaginatedResponse<T> {
+  data: T[];
+  totalCount: number;
+  pageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  hasPrevious: boolean;
+  hasNext: boolean;
+  nextPage?: number | null;
+  prevPage?: number | null;
 }
 
 // Add single image to existing project
@@ -199,29 +236,58 @@ export interface AddProjectImageRequestDto {
   isMainImage?: boolean;
 }
 
+// Real Estate Project DTO
 export interface ProjectDto {
   id: string;
   createdAt: string;
   updatedAt: string;
   name: string;
   description: string;
-  photoUrl?: string; // Deprecated: kept for backward compatibility
-  imageData?: string; // Deprecated: kept for backward compatibility
-  imageContentType?: string; // Deprecated: kept for backward compatibility
-  imageFileName?: string; // Deprecated: kept for backward compatibility
-  images: ProjectImageDto[]; // New: Multiple images support
-  mainImage?: ProjectImageDto; // New: Quick access to main image
-  status: ProjectStatus;
-  technologiesUsed?: string;
-  projectUrl?: string;
-  gitHubUrl?: string;
+
+  // Media - File System Storage
+  images: ProjectImageDto[]; // Multiple images support
+  mainImage?: ProjectImageDto; // Quick access to main image
+  videos: ProjectVideoDto[]; // Multiple videos support
+  mainVideo?: ProjectVideoDto; // Quick access to main video
+
+  // Project Status and Type
+  status: ProjectStatus; // Current, Future, Past
+
+  // Real Estate Specific Fields
+  companyUrl?: string; // Company project page URL
+  googleMapsUrl?: string; // Google Maps location URL
+  location?: string; // Project location
+  propertyType?: string; // Residential, Commercial, etc.
+  totalUnits?: number; // Number of units in the project
+  projectArea?: number; // Project area in square meters
+  priceStart?: number; // Starting price
+  priceEnd?: number; // Maximum price
+  priceCurrency?: string; // Currency (default: "EGP")
+  priceRange?: string; // Formatted price range display
+
+  // Publication and Organization
+  isPublished: boolean;
+  isFeatured: boolean; // For homepage featured projects
+  sortOrder: number;
+
+  // Multilingual Support
+  translations: ProjectTranslationDto[]; // Multiple language translations
+
+  // Metadata
+  createdByName?: string;
+
+  // Deprecated fields (kept for backward compatibility)
+  photoUrl?: string;
+  imageData?: string;
+  imageContentType?: string;
+  imageFileName?: string;
+  technologiesUsed?: string; // Now used for construction technologies
+  projectUrl?: string; // Deprecated in favor of companyUrl
+  gitHubUrl?: string; // Not applicable for real estate
   startDate?: string;
   endDate?: string;
   client?: string;
   budget?: number;
-  isPublished: boolean;
-  sortOrder: number;
-  createdByName?: string;
 }
 
 // API Response ProjectDto - represents what actually comes from the API
@@ -231,13 +297,44 @@ export interface ApiProjectDto {
   updatedAt: string;
   name: string;
   description: string;
-  photoUrl?: string; // Deprecated: kept for backward compatibility
-  imageData?: string; // Deprecated: kept for backward compatibility
-  imageContentType?: string; // Deprecated: kept for backward compatibility
-  imageFileName?: string; // Deprecated: kept for backward compatibility
-  images: ProjectImageDto[]; // New: Multiple images support
-  mainImage?: ProjectImageDto; // New: Quick access to main image
-  status: string; // API returns status as string
+
+  // Media - File System Storage
+  images: ProjectImageDto[];
+  mainImage?: ProjectImageDto;
+  videos: ProjectVideoDto[];
+  mainVideo?: ProjectVideoDto;
+
+  // Project Status (API returns status as string)
+  status: string;
+
+  // Real Estate Specific Fields
+  companyUrl?: string;
+  googleMapsUrl?: string;
+  location?: string;
+  propertyType?: string;
+  totalUnits?: number;
+  projectArea?: number;
+  priceStart?: number;
+  priceEnd?: number;
+  priceCurrency?: string;
+  priceRange?: string;
+
+  // Publication and Organization
+  isPublished: boolean;
+  isFeatured: boolean;
+  sortOrder: number;
+
+  // Multilingual Support
+  translations: ProjectTranslationDto[];
+
+  // Metadata
+  createdByName?: string;
+
+  // Deprecated fields (kept for backward compatibility)
+  photoUrl?: string;
+  imageData?: string;
+  imageContentType?: string;
+  imageFileName?: string;
   technologiesUsed?: string;
   projectUrl?: string;
   gitHubUrl?: string;
@@ -245,9 +342,6 @@ export interface ApiProjectDto {
   endDate?: string;
   client?: string;
   budget?: number;
-  isPublished: boolean;
-  sortOrder: number;
-  createdByName?: string;
 }
 
 export interface CreateProjectRequestDto {
@@ -266,22 +360,46 @@ export interface CreateProjectRequestDto {
   sortOrder?: number; // Default: 0
 }
 
-// Form data request for creating projects with file upload
+// Form data request for creating real estate projects with file upload
 export interface CreateProjectFormRequestDto {
-  name: string;
+  // Required Fields
+  name: string; // max 200 chars
   description: string;
   status: ProjectStatus;
-  images?: File[]; // Multiple image file uploads
+
+  // Media Upload
+  images?: File[]; // Multiple image file uploads (max 10MB each)
   mainImageIndex?: number; // Index of main image in the images array
-  technologiesUsed?: string;
-  projectUrl?: string;
-  gitHubUrl?: string;
+  videos?: File[]; // Multiple video file uploads (max 100MB each)
+  mainVideoIndex?: number; // Index of main video in the videos array
+
+  // Real Estate Specific Fields
+  companyUrl?: string; // max 500 chars
+  googleMapsUrl?: string; // max 500 chars
+  location?: string; // max 200 chars
+  propertyType?: string; // max 100 chars
+  totalUnits?: number;
+  projectArea?: number;
+  priceStart?: number;
+  priceEnd?: number;
+  priceCurrency?: string; // max 10 chars, default: "EGP"
+
+  // Publication and Organization
+  isPublished?: boolean; // default: true
+  isFeatured?: boolean; // default: false
+  sortOrder?: number; // default: 0
+
+  // Multilingual Support
+  translations?: ProjectTranslationDto[]; // JSON array
+
+  // Deprecated/Legacy Fields (for backward compatibility)
+  technologiesUsed?: string; // Now used for construction technologies
+  projectUrl?: string; // Deprecated in favor of companyUrl
+  gitHubUrl?: string; // Not applicable for real estate
   startDate?: string;
   endDate?: string;
   client?: string;
   budget?: number;
-  isPublished?: boolean;
-  sortOrder?: number;
 }
 
 export interface UpdateProjectRequestDto {
@@ -300,14 +418,41 @@ export interface UpdateProjectRequestDto {
   sortOrder?: number;
 }
 
-// Form data request for updating projects with file upload
+// Form data request for updating real estate projects with file upload
 export interface UpdateProjectFormRequestDto {
-  name?: string;
+  // Basic Fields
+  name?: string; // max 200 chars
   description?: string;
   status?: ProjectStatus;
-  newImages?: File[]; // New images to add
+
+  // Media Management
+  newImages?: File[]; // New images to add (max 10MB each)
   removeImageIds?: string[]; // IDs of images to remove
   mainImageId?: string; // ID of image to set as main
+  newVideos?: File[]; // New videos to add (max 100MB each)
+  removeVideoIds?: string[]; // IDs of videos to remove
+  mainVideoId?: string; // ID of video to set as main
+
+  // Real Estate Specific Fields
+  companyUrl?: string; // max 500 chars
+  googleMapsUrl?: string; // max 500 chars
+  location?: string; // max 200 chars
+  propertyType?: string; // max 100 chars
+  totalUnits?: number;
+  projectArea?: number;
+  priceStart?: number;
+  priceEnd?: number;
+  priceCurrency?: string; // max 10 chars
+
+  // Publication and Organization
+  isPublished?: boolean;
+  isFeatured?: boolean;
+  sortOrder?: number;
+
+  // Multilingual Support
+  translations?: ProjectTranslationDto[]; // JSON array
+
+  // Deprecated/Legacy Fields (for backward compatibility)
   technologiesUsed?: string;
   projectUrl?: string;
   gitHubUrl?: string;
@@ -315,8 +460,13 @@ export interface UpdateProjectFormRequestDto {
   endDate?: string;
   client?: string;
   budget?: number;
-  isPublished?: boolean;
-  sortOrder?: number;
+}
+
+// Video Upload Request DTO
+export interface AddProjectVideoRequestDto {
+  video: File;
+  description?: string;
+  isMainVideo?: boolean;
 }
 
 // Award Types
@@ -411,10 +561,56 @@ export interface HealthCheckResponse {
   timestamp: string;
 }
 
-// Common Filter Types
+// Enhanced Project Filter Types for Real Estate API
 export interface ProjectFilterParams {
+  // Basic Filters
   status?: ProjectStatus;
   isPublished?: boolean;
+  isFeatured?: boolean;
+
+  // Real Estate Specific Filters
+  propertyType?: string;
+  location?: string;
+  priceMin?: number;
+  priceMax?: number;
+
+  // Search and Language
+  searchTerm?: string;
+  language?: 'ar' | 'en';
+
+  // Date Filters
+  startDateFrom?: string;
+  startDateTo?: string;
+
+  // Sorting
+  sortBy?: 'SortOrder' | 'CreatedAt' | 'Name' | 'StartDate' | 'PriceStart' | 'Location';
+  sortDescending?: boolean;
+
+  // Pagination
+  page?: number;
+  pageSize?: number;
+}
+
+// Project Summary Response (for lightweight listing)
+export interface ProjectSummaryDto {
+  id: string;
+  name: string;
+  description: string;
+  mainImage?: ProjectImageDto;
+  status: ProjectStatus;
+  location?: string;
+  propertyType?: string;
+  priceRange?: string;
+  isPublished: boolean;
+  isFeatured: boolean;
+  sortOrder: number;
+  translations: ProjectTranslationDto[];
+}
+
+// Featured Projects Response
+export interface FeaturedProjectsResponse {
+  projects: ProjectDto[];
+  count: number;
 }
 
 export interface AwardFilterParams {
@@ -494,7 +690,9 @@ export const HttpStatusCodes = {
 } as const;
 
 // Type aliases for backward compatibility (without Dto suffix)
-// Pagination type alias for backward compatibility
+// Pagination type aliases for backward compatibility
+export type PagedResponse<T> = PaginatedResponse<T>;
+
 export type LoginRequest = LoginRequestDto;
 export type RegisterRequest = RegisterRequestDto;
 export type User = UserDto;
@@ -627,4 +825,81 @@ export interface UserStatus {
   lockoutEnd?: string;
   lastLoginAt?: string;
   failedLoginAttempts: number;
+}
+
+// Additional interfaces to match backend exactly
+export interface CreateProjectFormRequestDto {
+  name: string;
+  description: string;
+  status: ProjectStatus;
+  images?: File[];
+  mainImageIndex?: number;
+  videos?: File[];
+  mainVideoIndex?: number;
+  companyUrl?: string;
+  googleMapsUrl?: string;
+  location?: string;
+  propertyType?: string;
+  totalUnits?: number;
+  projectArea?: number;
+  priceStart?: number;
+  priceEnd?: number;
+  priceCurrency?: string;
+  technologiesUsed?: string;
+  projectUrl?: string;
+  gitHubUrl?: string;
+  startDate?: string;
+  endDate?: string;
+  client?: string;
+  budget?: number;
+  isPublished?: boolean;
+  isFeatured?: boolean;
+  sortOrder?: number;
+  translations?: ProjectTranslationDto[];
+}
+
+export interface UpdateProjectFormRequestDto {
+  name?: string;
+  description?: string;
+  status?: ProjectStatus;
+  newImages?: File[];
+  removeImageIds?: string[];
+  mainImageId?: string;
+  newVideos?: File[];
+  removeVideoIds?: string[];
+  mainVideoId?: string;
+  companyUrl?: string;
+  googleMapsUrl?: string;
+  location?: string;
+  propertyType?: string;
+  totalUnits?: number;
+  projectArea?: number;
+  priceStart?: number;
+  priceEnd?: number;
+  priceCurrency?: string;
+  technologiesUsed?: string;
+  projectUrl?: string;
+  gitHubUrl?: string;
+  startDate?: string;
+  endDate?: string;
+  client?: string;
+  budget?: number;
+  isPublished?: boolean;
+  isFeatured?: boolean;
+  sortOrder?: number;
+  translations?: ProjectTranslationDto[];
+}
+
+export interface ProjectTranslationCreateDto {
+  language: string;
+  direction: 0 | 1; // 0 = LTR, 1 = RTL
+  title: string;
+  description: string;
+}
+
+export interface ProjectTranslationUpsertDto {
+  language: string;
+  direction: 0 | 1;
+  title: string;
+  description: string;
 }

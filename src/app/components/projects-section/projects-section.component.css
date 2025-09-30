@@ -1,0 +1,188 @@
+/* Projects Section Component Styles */
+
+/* Ensure sharp corners and formal borders */
+.projects-card {
+  border-radius: 0 !important;
+  border: 2px solid #4B5563;
+  transition: all 0.3s ease;
+}
+
+.projects-card:hover {
+  border-color: #9CA3AF;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive grid improvements */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-image {
+    height: 12rem; /* h-48 */
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-info {
+    font-size: 0.75rem; /* text-xs */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-image {
+    height: 14rem; /* h-56 */
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1536px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1537px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Badge styles with sharp borders */
+.project-badge {
+  border: 1px solid #9CA3AF;
+  border-radius: 0;
+  background: rgba(25, 36, 56, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Button styles with formal borders */
+.project-button {
+  border: 1px solid #6B7280;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.project-button:hover {
+  border-color: #9CA3AF;
+}
+
+/* Tab styles with sharp borders */
+.project-tabs {
+  border: 2px solid #4B5563;
+  border-radius: 0;
+}
+
+.project-tab {
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.project-tab.active {
+  border-color: #9CA3AF;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-tab:not(.active):hover {
+  border-color: #6B7280;
+}
+
+/* Pagination with sharp borders */
+.pagination-button {
+  border: 1px solid #6B7280;
+  border-radius: 0;
+}
+
+.pagination-button:hover:not(:disabled) {
+  border-color: #9CA3AF;
+}
+
+.pagination-button.active {
+  border-color: #9CA3AF;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  .project-title {
+    font-size: 1.125rem; /* text-lg */
+  }
+
+  .project-description {
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.25rem;
+  }
+
+  .project-detail-text {
+    font-size: 0.75rem; /* text-xs */
+  }
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 640px) {
+  .project-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .project-section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Glass effect overrides for formal look */
+.glass-card-dark {
+  border-radius: 0 !important;
+  border: 2px solid #4B5563;
+}
+
+.glass-effect {
+  border-radius: 0 !important;
+  border: 1px solid #9CA3AF;
+}
+
+/* Improve readability on smaller screens */
+@media (max-width: 640px) {
+  .truncate-mobile {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+}
+
+/* Focus states for accessibility */
+.project-button:focus,
+.pagination-button:focus,
+.project-tab:focus {
+  outline: 2px solid #60A5FA;
+  outline-offset: 2px;
+}
+
+/* Loading and error states */
+.error-card {
+  border: 2px solid #DC2626;
+}
+
+.loading-spinner {
+  border-top-color: #60A5FA;
+}

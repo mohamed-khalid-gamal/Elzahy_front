@@ -1,0 +1,317 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "awards": "Awards",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "dashboard": "Dashboard",
+    "logout": "Logout",
+    "toggleMenu": "Toggle menu",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu"
+  },
+  "header": {
+    "companyName": "ELZAHY GROUP",
+    "companyLogo": "ELZAHY GROUP Logo"
+  },
+  "language": {
+    "switch": "Switch Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "current": "Current Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Ready to Build Something Amazing?",
+      "subtitle": "Let's discuss your next construction project and discover how ELZAHY GROUP can bring your vision to life with our expertise and dedication.",
+      "cta": "Start Your Project",
+      "backgroundAlt": "ELZAHY GROUP construction project background"
+    },
+    "features": {
+      "experience": {
+        "title": "25+ Years Experience",
+        "description": "Over two decades of delivering exceptional construction projects"
+      },
+      "quality": {
+        "title": "Premium Quality",
+        "description": "Committed to the highest standards in every project we undertake"
+      },
+      "innovation": {
+        "title": "Innovation Focus",
+        "description": "Leveraging cutting-edge technology and modern construction methods"
+      }
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Explore our portfolio of successful construction and engineering projects",
+    "viewProject": "View Project",
+    "viewDetails": "View Property Details",
+    "viewAll": "View All Projects",
+    "loadMore": "Load More Projects",
+    "noProjects": "No projects available at the moment",
+    "error": "Failed to load projects. Please try again later.",
+    "invalidData": "Invalid data format received from server",
+    "imageAlt": "Property image for {{ name }}",
+    "imageTitle": "Click to view details",
+    "tabs": {
+      "completed": "Completed Projects",
+      "available": "Available Projects",
+      "upcoming": "Upcoming Projects"
+    },
+    "status": {
+      "available": "Available",
+      "upcoming": "Upcoming",
+      "completed": "Completed"
+    },
+    "notSpecified": "Not specified",
+    "info": {
+      "areaUnit": "m²",
+      "units": "Units",
+      "photos": "Photos",
+      "videos": "Videos",
+      "featured": "Featured"
+    },
+    "pagination": {
+      "showing": "Showing {{ from }} - {{ to }} of {{ total }} projects"
+    },
+    "filter": {
+      "all": "All Projects",
+      "commercial": "Commercial",
+      "residential": "Residential",
+      "infrastructure": "Infrastructure"
+    }
+  },
+  "awards": {
+    "title": "Awards & Recognition",
+    "subtitle": "Our commitment to excellence has been recognized with numerous awards",
+    "year": "Year",
+    "category": "Category",
+    "loading": "Loading awards...",
+    "comingSoon": "Awards coming soon!",
+    "seeAll": "See All Awards",
+    "none": "No awards available yet.",
+    "stats": {
+      "industryAwards": "Industry Awards",
+      "clientSatisfaction": "Client Satisfaction",
+      "safetyRecord": "Safety Record",
+      "yearsExcellence": "Years Excellence"
+    }
+  },
+  "about": {
+    "title": "About ELZAHY GROUP",
+    "subtitle": "For over two decades, ELZAHY GROUP has been a leader in construction and engineering. We specialize in large-scale infrastructure, turning ambitious visions into reality with precision and expertise.",
+    "features": {
+      "safety": "Safety First",
+      "infrastructure": "Infrastructure",
+      "team": "Expert Team",
+      "technology": "Advanced Tech"
+    },
+    "learnMore": "Learn More About Us",
+    "imageAlt1": "ELZAHY GROUP construction project showcase 1",
+    "imageAlt2": "ELZAHY GROUP construction project showcase 2",
+    "imageAltGeneric": "ELZAHY GROUP project showcase image",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To deliver exceptional construction and engineering solutions that exceed our clients' expectations while contributing to the development of sustainable communities."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the leading construction and engineering company in the region, known for innovation, quality, and reliability."
+    },
+    "values": {
+      "title": "Our Values",
+      "integrity": "Integrity",
+      "excellence": "Excellence",
+      "innovation": "Innovation",
+      "sustainability": "Sustainability"
+    },
+    "featuresCards": {
+      "infrastructure": {
+        "title": "Infrastructure Excellence",
+        "description": "Specializing in large-scale infrastructure projects with cutting-edge engineering solutions"
+      },
+      "team": {
+        "title": "Expert Team",
+        "description": "Highly skilled professionals with decades of combined experience in construction and engineering"
+      },
+      "equipment": {
+        "title": "Advanced Equipment",
+        "description": "State-of-the-art machinery and tools ensuring efficient and precise project execution"
+      },
+      "safety": {
+        "title": "Safety First",
+        "description": "Unwavering commitment to safety standards and environmental responsibility in all operations"
+      }
+    },
+    "page": {
+      "story": {
+        "title": "Our Story",
+        "p1": "ELZAHY GROUP has been at the forefront of construction and engineering excellence for over two decades. Founded with a vision to transform the infrastructure landscape, we have grown from a small construction company to a leading force in large-scale development projects.",
+        "p2": "Our expertise spans across excavation, foundation work, infrastructure development, and complex engineering solutions. We pride ourselves on delivering projects that not only meet but exceed client expectations while maintaining the highest standards of safety and quality.",
+        "p3": "Today, we continue to push the boundaries of what's possible in construction, leveraging cutting-edge technology and innovative methodologies to build the infrastructure of tomorrow."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "successDescription": "Thank you for contacting us. We will get back to you shortly.",
+      "error": "Failed to send message. Please try again.",
+      "errorDescription": "Failed to send message. Please try again later.",
+      "required": "This field is required",
+      "emailInvalid": "Please enter a valid email address",
+      "nameMax": "Full name must be less than 100 characters",
+      "emailMax": "Email must be less than 255 characters",
+      "subjectMax": "Subject must be less than 200 characters"
+    },
+    "info": {
+      "title": "Contact Information",
+      "addressTitle": "Our Office",
+      "emailTitle": "Email Us",
+      "phoneTitle": "Call Us",
+      "hoursTitle": "Business Hours",
+      "address": "123 Construction Ave, Building City, 45678",
+      "hours": {
+        "weekdays": "Monday - Friday: 8:00 AM - 6:00 PM",
+        "saturday": "Saturday: 9:00 AM - 2:00 PM",
+        "sunday": "Sunday: Closed"
+      }
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "welcome": "Welcome to the admin panel"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "ELZAHY GROUP",
+      "description": "Leading construction and engineering solutions across the Middle East"
+    },
+    "links": {
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "contact": "Contact Info"
+    },
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2024 ELZAHY GROUP. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "page": "page",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "results": "Results",
+    "noResults": "No results found",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "readMore": "Read More",
+    "readLess": "Read Less",
+    "ok": "OK",
+    "notSpecified": "Not specified",
+    "invalidDate": "Invalid date"
+  },
+  "cart": {
+    "items": "You have {{count}} item(s) in your cart"
+  },
+  "meta": {
+    "home": {
+      "title": "ELZAHY GROUP - Excellence in Engineering & Construction",
+      "description": "Leading construction and engineering solutions across the Middle East. 25+ years of experience in delivering premium quality projects."
+    },
+    "projects": {
+      "title": "Our Projects - ELZAHY GROUP",
+      "description": "Explore our portfolio of successful construction and engineering projects across commercial, residential, and infrastructure sectors."
+    },
+    "awards": {
+      "title": "Awards & Recognition - ELZAHY GROUP",
+      "description": "Our commitment to excellence has been recognized with numerous awards in construction and engineering."
+    },
+    "about": {
+      "title": "About Us - ELZAHY GROUP",
+      "description": "Learn about ELZAHY GROUP, your trusted partner in construction and engineering excellence with over 25 years of experience."
+    },
+    "contact": {
+      "title": "Contact Us - ELZAHY GROUP",
+      "description": "Get in touch with our team for your next construction or engineering project. We're here to help bring your vision to life."
+    }
+  },
+  "projectDetails": {
+    "loading": "Loading project details...",
+    "buttons": {
+      "back": "Back to Projects"
+    },
+    "client": "Client",
+    "noImage": "No image available",
+    "gallery": {
+      "items": "items"
+    },
+    "info": {
+      "title": "Project Information",
+      "location": "Location",
+      "propertyType": "Property Type",
+      "totalUnits": "Total Units",
+      "projectArea": "Project Area",
+      "priceRange": "Price Range",
+      "status": "Status",
+      "startDate": "Start Date",
+      "endDate": "Completion Date"
+    },
+    "tech": {
+      "title": "Construction Technologies & Features"
+    },
+    "resources": {
+      "title": "Project Resources",
+      "companyWebsite": "Company Website",
+      "maps": "View on Maps",
+      "projectWebsite": "Project Website"
+    },
+    "related": {
+      "title": "Related Projects"
+    },
+    "meta": {
+      "title": "Project Details",
+      "created": "Created:",
+      "updated": "Last Updated:",
+      "createdBy": "Created By:"
+    },
+    "errors": {
+      "invalidId": "Project ID not found",
+      "loadFailed": "Failed to load project details. Please try again later.",
+      "notFound": "Project not found or not available for public viewing.",
+      "titleNotFound": "Project Not Found"
+    },
+    "price": {
+      "startingFrom": "Starting from",
+      "contact": "Contact for Price"
+    }
+  }
+}

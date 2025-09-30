@@ -1,0 +1,33 @@
+{
+  "bundlemonConfig": {
+    "baseDir": "./dist/project-angular",
+    "files": [
+      {
+        "path": "**/main*.js",
+        "maxSize": "400kb",
+        "compression": "gzip"
+      },
+      {
+        "path": "**/polyfills*.js",
+        "maxSize": "150kb",
+        "compression": "gzip"
+      },
+      {
+        "path": "**/vendor*.js",
+        "maxSize": "300kb",
+        "compression": "gzip"
+      },
+      {
+        "path": "**/*.css",
+        "maxSize": "50kb",
+        "compression": "gzip"
+      }
+    ],
+    "defaultCompression": "gzip",
+    "reportOutput": ["console", "github"],
+    "ci": {
+      "trackBranches": ["main", "master"],
+      "subProject": "angular-app"
+    }
+  }
+}

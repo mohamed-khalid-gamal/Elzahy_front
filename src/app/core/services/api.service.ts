@@ -20,7 +20,7 @@ export class ApiService {
     const httpParams = this.buildHttpParams(params);
     return this.http.get<ApiResponse<T>>(`${this.baseUrl}${endpoint}`, { params: httpParams })
       .pipe(
-        map(response => this.handleSuccess(response)),
+        map((response: ApiResponse<T>) => this.handleSuccess<T>(response)),
         catchError(error => this.handleError(error))
       );
   }
@@ -29,7 +29,7 @@ export class ApiService {
   post<T>(endpoint: string, data?: any): Observable<T> {
     return this.http.post<ApiResponse<T>>(`${this.baseUrl}${endpoint}`, data)
       .pipe(
-        map(response => this.handleSuccess(response)),
+        map((response: ApiResponse<T>) => this.handleSuccess<T>(response)),
         catchError(error => this.handleError(error))
       );
   }
@@ -38,7 +38,7 @@ export class ApiService {
   put<T>(endpoint: string, data?: any): Observable<T> {
     return this.http.put<ApiResponse<T>>(`${this.baseUrl}${endpoint}`, data)
       .pipe(
-        map(response => this.handleSuccess(response)),
+        map((response: ApiResponse<T>) => this.handleSuccess<T>(response)),
         catchError(error => this.handleError(error))
       );
   }
@@ -49,7 +49,7 @@ export class ApiService {
   delete<T>(endpoint: string): Observable<T> {
     return this.http.delete<ApiResponse<T>>(`${this.baseUrl}${endpoint}`)
       .pipe(
-        map(response => this.handleSuccess(response)),
+        map((response: ApiResponse<T>) => this.handleSuccess<T>(response)),
         catchError(error => this.handleError(error))
       );
   }
@@ -64,7 +64,7 @@ export class ApiService {
       params: httpParams
     })
       .pipe(
-        map(response => this.handleSuccess(response)),
+        map((response: ApiResponse<T>) => this.handleSuccess<T>(response)),
         catchError(error => this.handleError(error))
       );
   }
@@ -72,12 +72,30 @@ export class ApiService {
   /**
    * Handle successful API response
    */
-  private handleSuccess<T>(response: ApiResponse<T>): T {
-    if (response.ok && response.data !== undefined) {
-      return response.data;
+  private handleSuccess<T>(response: ApiResponse<T> | any): T {
+    console.log('🔍 ApiService handleSuccess - Raw response:', response);
+    console.log('🔍 Response type:', typeof response);
+    console.log('🔍 Response keys:', Object.keys(response || {}));
+
+    // Handle standard ApiResponse format
+    if (response && typeof response === 'object' && response.ok !== undefined) {
+      if (response.ok && response.data !== undefined) {
+        console.log('✅ Standard ApiResponse format detected');
+        return response.data as T;
+      }
+      console.error('❌ ApiResponse indicates failure:', response.error);
+      throw new Error(response.error?.message || 'Request failed');
     }
 
-    throw new Error(response.error?.message || 'Request failed');
+    // Handle direct data response (API might return data directly without wrapper)
+    if (response !== null && response !== undefined) {
+      console.log('⚠️ Non-standard response format, returning as-is');
+      return response as T;
+    }
+
+    // Handle null/undefined response
+    console.error('❌ Null/undefined response received');
+    throw new Error('No data received from server');
   }
 
   /**
@@ -86,13 +104,23 @@ export class ApiService {
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unexpected error occurred';
 
+    console.error('🔍 ApiService handleError - Full error object:', error);
+    console.error('🔍 Error status:', error.status);
+    console.error('🔍 Error statusText:', error.statusText);
+    console.error('🔍 Error url:', error.url);
+    console.error('🔍 Error body:', error.error);
+
     if (error.error && error.error.error && error.error.error.message) {
       errorMessage = error.error.error.message;
+    } else if (error.error && error.error.message) {
+      errorMessage = error.error.message;
     } else if (error.message) {
       errorMessage = error.message;
+    } else if (error.statusText) {
+      errorMessage = error.statusText;
     }
 
-    console.error('API Error:', error);
+    console.error('❌ Final error message:', errorMessage);
     return throwError(() => new Error(errorMessage));
   }
 

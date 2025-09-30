@@ -1,99 +1,99 @@
 <app-page-wrapper
-  title="Contact Us"
-  description="Get in touch with ELZAHY GROUP. We are here to answer your questions about our construction and engineering services."
+  titleKey="contact.title"
+  descriptionKey="contact.subtitle"
 >
   <div class="pt-28 pb-20 content-bg-wrap">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <div class="glass-card-dark rounded-2xl p-6 sm:p-8 h-full">
-            <h2 class="text-2xl font-bold text-white mb-6">Get in Touch</h2>
+            <h2 class="text-2xl font-bold text-white mb-6">{{ 'contact.title' | translate }}</h2>
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label for="fullName" class="text-gray-300">Full Name *</label>
+                  <label for="fullName" class="text-gray-300">{{ 'contact.form.name' | translate }} *</label>
                   <input
                     id="fullName"
                     type="text"
                     formControlName="fullName"
-                    placeholder="John Doe"
+                    [placeholder]="'contact.form.name' | translate"
                     required
                     maxlength="100"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
                   />
                   <div *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched" class="text-red-400 text-sm mt-1">
-                    <span *ngIf="form.get('fullName')?.errors?.['required']">Full name is required</span>
-                    <span *ngIf="form.get('fullName')?.errors?.['maxlength']">Full name must be less than 100 characters</span>
+                    <span *ngIf="form.get('fullName')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
+                    <span *ngIf="form.get('fullName')?.errors?.['maxlength']">{{ 'contact.form.nameMax' | translate }}</span>
                   </div>
                 </div>
                 <div>
-                  <label for="emailAddress" class="text-gray-300">Email Address *</label>
+                  <label for="emailAddress" class="text-gray-300">{{ 'contact.form.email' | translate }} *</label>
                   <input
                     id="emailAddress"
                     type="email"
                     formControlName="emailAddress"
-                    placeholder="john.doe@example.com"
+                    [placeholder]="'contact.form.email' | translate"
                     required
                     maxlength="255"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
                   />
                   <div *ngIf="form.get('emailAddress')?.invalid && form.get('emailAddress')?.touched" class="text-red-400 text-sm mt-1">
-                    <span *ngIf="form.get('emailAddress')?.errors?.['required']">Email is required</span>
-                    <span *ngIf="form.get('emailAddress')?.errors?.['email']">Please enter a valid email address</span>
-                    <span *ngIf="form.get('emailAddress')?.errors?.['maxlength']">Email must be less than 255 characters</span>
+                    <span *ngIf="form.get('emailAddress')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
+                    <span *ngIf="form.get('emailAddress')?.errors?.['email']">{{ 'contact.form.emailInvalid' | translate }}</span>
+                    <span *ngIf="form.get('emailAddress')?.errors?.['maxlength']">{{ 'contact.form.emailMax' | translate }}</span>
                   </div>
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label for="phoneNumber" class="text-gray-300">Phone Number</label>
+                  <label for="phoneNumber" class="text-gray-300">{{ 'contact.form.phone' | translate }}</label>
                   <input
                     id="phoneNumber"
                     type="tel"
                     formControlName="phoneNumber"
-                    placeholder="(123) 456-7890"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                    [placeholder]="'contact.form.phone' | translate"
+                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
                   />
                 </div>
                 <div>
-                  <label for="company" class="text-gray-300">Company</label>
+                  <label for="company" class="text-gray-300">{{ 'contact.form.company' | translate }}</label>
                   <input
                     id="company"
                     type="text"
                     formControlName="company"
-                    placeholder="Your Company Name"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                    [placeholder]="'contact.form.company' | translate"
+                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
                   />
                 </div>
               </div>
               <div>
-                <label for="subject" class="text-gray-300">Subject *</label>
+                <label for="subject" class="text-gray-300">{{ 'contact.form.subject' | translate }} *</label>
                 <input
                   id="subject"
                   type="text"
                   formControlName="subject"
-                  placeholder="Project Inquiry"
+                  [placeholder]="'contact.form.subject' | translate"
                   required
                   maxlength="200"
-                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
                 />
                 <div *ngIf="form.get('subject')?.invalid && form.get('subject')?.touched" class="text-red-400 text-sm mt-1">
-                  <span *ngIf="form.get('subject')?.errors?.['required']">Subject is required</span>
-                  <span *ngIf="form.get('subject')?.errors?.['maxlength']">Subject must be less than 200 characters</span>
+                  <span *ngIf="form.get('subject')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
+                  <span *ngIf="form.get('subject')?.errors?.['maxlength']">{{ 'contact.form.subjectMax' | translate }}</span>
                 </div>
               </div>
               <div>
-                <label for="message" class="text-gray-300">Message *</label>
+                <label for="message" class="text-gray-300">{{ 'contact.form.message' | translate }} *</label>
                 <textarea
                   id="message"
                   formControlName="message"
-                  placeholder="Tell us about your project..."
+                  [placeholder]="'contact.form.message' | translate"
                   required
                   rows="5"
-                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2"
+                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r"
                 ></textarea>
                 <div *ngIf="form.get('message')?.invalid && form.get('message')?.touched" class="text-red-400 text-sm mt-1">
-                  <span *ngIf="form.get('message')?.errors?.['required']">Message is required</span>
+                  <span *ngIf="form.get('message')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
                 </div>
               </div>
               <div>
@@ -102,13 +102,13 @@
                   [disabled]="form.invalid || isSubmitting"
                   class="w-full glass-card hover:bg-white/20 text-white border-0 px-4 py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span *ngIf="!isSubmitting">Send Message</span>
+                  <span *ngIf="!isSubmitting">{{ 'contact.form.send' | translate }}</span>
                   <span *ngIf="isSubmitting" class="flex items-center justify-center">
                     <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Sending...
+                    {{ 'contact.form.sending' | translate }}
                   </span>
                 </button>
               </div>
@@ -117,7 +117,7 @@
         </div>
         <div class="space-y-8">
           <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+            <h3 class="text-2xl font-bold text-white mb-6">{{ 'contact.info.title' | translate }}</h3>
             <div class="space-y-6">
               <div class="flex items-start space-x-4">
                 <div class="glass-effect-dark rounded-full p-3 flex-shrink-0">
@@ -127,8 +127,8 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold text-white">Our Office</p>
-                  <p class="text-gray-300">123 Construction Ave, Building City, 45678</p>
+                  <p class="font-semibold text-white">{{ 'contact.info.addressTitle' | translate }}</p>
+                  <p class="text-gray-300">{{ 'contact.info.address' | translate }}</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -139,7 +139,7 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold text-white">Email Us</p>
+                  <p class="font-semibold text-white">{{ 'contact.info.emailTitle' | translate }}</p>
                   <p class="text-gray-300">contact@elzahygroup.com</p>
                 </div>
               </div>
@@ -150,18 +150,18 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold text-white">Call Us</p>
+                  <p class="font-semibold text-white">{{ 'contact.info.phoneTitle' | translate }}</p>
                   <p class="text-gray-300">(123) 456-7890</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-white mb-4">Business Hours</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">{{ 'contact.info.hoursTitle' | translate }}</h3>
             <div class="text-gray-300 space-y-2">
-              <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-              <p>Saturday: 9:00 AM - 2:00 PM</p>
-              <p>Sunday: Closed</p>
+              <p>{{ 'contact.info.hours.weekdays' | translate }}</p>
+              <p>{{ 'contact.info.hours.saturday' | translate }}</p>
+              <p>{{ 'contact.info.hours.sunday' | translate }}</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
@@ -6,22 +6,26 @@ import { PageWrapperComponent } from '../../components/page-wrapper/page-wrapper
 import { ToastrService } from 'ngx-toastr';
 import { ContactService } from '../../services/contact.service';
 import { CreateContactRequest } from '../../shared/types/api.types';
+import { SeoService } from '../../services/seo.service';
 import Swal from 'sweetalert2';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [CommonModule, SharedModule, ReactiveFormsModule, PageWrapperComponent],
+  imports: [CommonModule, SharedModule, ReactiveFormsModule, PageWrapperComponent, TranslateModule],
   templateUrl: './contact-page.component.html'
 })
-export class ContactPageComponent {
+export class ContactPageComponent implements OnInit {
   form: FormGroup;
   isSubmitting = false;
+  private seoService = inject(SeoService);
 
   constructor(
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private translate: TranslateService
   ) {
     this.form = this.fb.group({
       fullName: ['', [Validators.required, Validators.maxLength(100)]],
@@ -30,6 +34,12 @@ export class ContactPageComponent {
       message: ['', Validators.required],
       phoneNumber: [''],
       company: ['']
+    });
+  }
+
+  ngOnInit() {
+    this.seoService.updateSEO({
+      url: 'https://elzahygroup.com/contact'
     });
   }
 
@@ -49,37 +59,31 @@ export class ContactPageComponent {
     };
 
     this.contactService.submitContact(contactRequest).subscribe({
-      next: (response) => {
-        // Show SweetAlert2 success message
+      next: () => {
         Swal.fire({
-          title: 'Message Sent Successfully!',
-          text: 'Thank you for contacting us. We will get back to you shortly.',
+          title: this.translate.instant('contact.form.success'),
+          text: this.translate.instant('contact.form.successDescription'),
           icon: 'success',
-          confirmButtonText: 'OK',
+          confirmButtonText: this.translate.instant('common.ok'),
           confirmButtonColor: '#10b981',
           background: '#1f2937',
           color: '#f9fafb',
-          customClass: {
-            popup: 'border border-gray-600'
-          }
+          customClass: { popup: 'border border-gray-600' }
         });
         this.form.reset();
         this.isSubmitting = false;
       },
       error: (error) => {
         console.error('Error sending contact message:', error);
-        // Show SweetAlert2 error message
         Swal.fire({
-          title: 'Error!',
-          text: 'Failed to send message. Please try again later.',
+          title: this.translate.instant('contact.form.error'),
+          text: this.translate.instant('contact.form.errorDescription'),
           icon: 'error',
-          confirmButtonText: 'OK',
+          confirmButtonText: this.translate.instant('common.ok'),
           confirmButtonColor: '#ef4444',
           background: '#1f2937',
           color: '#f9fafb',
-          customClass: {
-            popup: 'border border-gray-600'
-          }
+          customClass: { popup: 'border border-gray-600' }
         });
         this.isSubmitting = false;
       }
