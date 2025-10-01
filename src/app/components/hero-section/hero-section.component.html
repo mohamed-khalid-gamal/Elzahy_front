@@ -20,9 +20,9 @@
     class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
     [@parallaxContent]="{ value: 'moved', params: { yOffset: contentYOffset, opacity: contentOpacity } }"
   >
-    <div class="glass-card rounded-3xl p-6 sm:p-12" [@fadeInUp]>
+    <div class="glass-card rounded-[18px] sm:rounded-[22px] md:rounded-[26px] lg:rounded-[30px] p-4 sm:p-8 md:p-10 lg:p-12 shadow-2xl" [@fadeInUp]>
       <h1
-        class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 text-shadow"
+        class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 text-shadow"
         [@fadeInUpDelayed]
       >
         {{ 'home.hero.title' | translate }}
@@ -37,8 +37,8 @@
         class="flex flex-col sm:flex-row gap-4 justify-center items-center"
         [@fadeInUpDelayed3]
       >
-        <a routerLink="/projects" class="w-full sm:w-auto glass-card hover:bg-white/30 text-white border-0 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">{{ 'nav.projects' | translate }}</a>
-        <a routerLink="/contact" class="w-full sm:w-auto glass-card hover:bg-white/20 text-white border-white/30 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105">{{ 'home.hero.cta' | translate }}</a>
+        <a routerLink="/projects" class="w-full sm:w-auto glass-card hover:bg-white/30 text-white border-0 px-6 sm:px-8 py-2.5 sm:py-3 text-lg font-semibold rounded-[14px] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">{{ 'nav.projects' | translate }}</a>
+        <a routerLink="/contact" class="w-full sm:w-auto glass-card hover:bg-white/20 text-white border-white/10 px-6 sm:px-8 py-2.5 sm:py-3 text-lg font-semibold rounded-[14px] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">{{ 'home.hero.cta' | translate }}</a>
       </div>
     </div>
   </div>

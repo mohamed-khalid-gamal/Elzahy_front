@@ -49,7 +49,7 @@ import { environment } from '../../../../environments/environment';
                   <th class="px-6 py-4 text-left text-sm font-semibold text-white">Project</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-white">Status</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-white">Location</th>
-                  <th class="px-6 py-4 text-left text-sm font-semibold text-white">Property Type</th>
+                  <th class="px-6 py-4 text-left text-sm font-semibold text-white">Construction Type</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-white">Price Range</th>
                   <th class="px-6 py-4 text-left text-sm font-semibold text-white">Published</th>
                   <th class="px-6 py-4 text-center text-sm font-semibold text-white">Actions</th>
@@ -224,12 +224,12 @@ import { environment } from '../../../../environments/environment';
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-300 mb-2">Property Type</label>
+                  <label class="block text-sm font-medium text-gray-300 mb-2">Construction Type</label>
                   <select
                     formControlName="propertyType"
                     class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="">Select Property Type</option>
+                    <option value="">Select Construction Type</option>
                     <option value="Residential">Residential</option>
                     <option value="Commercial">Commercial</option>
                     <option value="Mixed Use">Mixed Use</option>

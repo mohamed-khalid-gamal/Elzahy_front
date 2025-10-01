@@ -168,8 +168,8 @@ export class SeoService {
   updateProjectSEO(project: any) {
     this.updateSEO({
       title: `${project.name} - ${SEO_CONSTANTS.COMPANY_NAME} Project`,
-      description: project.description || `Discover ${project.name}, a premium property by ${SEO_CONSTANTS.COMPANY_NAME} showcasing our excellence in real estate development.`,
-      keywords: `${project.name}, ${SEO_CONSTANTS.COMPANY_NAME} property, real estate, luxury property, property development`,
+      description: project.description || `Discover ${project.name}, a premium construction project by ${SEO_CONSTANTS.COMPANY_NAME} showcasing our excellence in construction and engineering.`,
+      keywords: `${project.name}, ${SEO_CONSTANTS.COMPANY_NAME} project, construction, quality building, engineering excellence`,
       url: `${SEO_CONSTANTS.BASE_URL}/project-details/${project.id}`,
       image: this.constructImageUrl(project.mainImage?.imageUrl || (project.images && project.images.length > 0 ? project.images[0].imageUrl : this.defaultSEO.image))
     });

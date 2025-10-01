@@ -1,0 +1,319 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "awards": "Récompenses",
+    "about": "À propos",
+    "contact": "Contact",
+    "dashboard": "Tableau de bord",
+    "logout": "Déconnexion",
+    "toggleMenu": "Basculer le menu",
+    "closeMenu": "Fermer le menu",
+    "openMenu": "Ouvrir le menu"
+  },
+  "header": {
+    "companyName": "ELZAHY GROUP",
+    "companyLogo": "Logo ELZAHY GROUP"
+  },
+  "language": {
+    "switch": "Changer de langue",
+    "english": "Anglais",
+    "arabic": "Arabe",
+    "german": "Allemand",
+    "french": "Français",
+    "current": "Langue actuelle"
+  },
+  "home": {
+    "hero": {
+      "title": "Prêt à construire quelque chose d'incroyable ?",
+      "subtitle": "Discutons de votre prochain projet de construction et découvrez comment ELZAHY GROUP peut donner vie à votre vision grâce à notre expertise et notre dévouement.",
+      "cta": "Démarrer votre projet",
+      "backgroundAlt": "Arrière-plan du projet de construction ELZAHY GROUP"
+    },
+    "features": {
+      "experience": {
+        "title": "Plus de 25 ans d'expérience",
+        "description": "Plus de deux décennies de réalisation de projets de construction exceptionnels"
+      },
+      "quality": {
+        "title": "Qualité premium",
+        "description": "Engagés aux plus hauts standards dans chaque projet que nous entreprenons"
+      },
+      "innovation": {
+        "title": "Focus sur l'innovation",
+        "description": "Utilisation de technologies de pointe et de méthodes de construction modernes"
+      }
+    }
+  },
+  "projects": {
+    "title": "Nos projets",
+    "subtitle": "Explorez notre portefeuille de projets réussis en construction et ingénierie",
+    "viewProject": "Voir le projet",
+    "viewDetails": "Voir les détails de la propriété",
+    "viewAll": "Voir tous les projets",
+    "loadMore": "Charger plus de projets",
+    "noProjects": "Aucun projet disponible pour le moment",
+    "error": "Échec du chargement des projets. Veuillez réessayer plus tard.",
+    "invalidData": "Format de données invalide reçu du serveur",
+    "imageAlt": "Image de la propriété pour {{ name }}",
+    "imageTitle": "Cliquez pour voir les détails",
+    "tabs": {
+      "completed": "Projets terminés",
+      "available": "Projets disponibles",
+      "upcoming": "Projets à venir"
+    },
+    "status": {
+      "available": "Disponible",
+      "upcoming": "À venir",
+      "completed": "Terminé"
+    },
+    "notSpecified": "Non spécifié",
+    "info": {
+      "areaUnit": "m²",
+      "units": "Unités",
+      "photos": "Photos",
+      "videos": "Vidéos",
+      "featured": "En vedette"
+    },
+    "pagination": {
+      "showing": "Affichage de {{ from }} - {{ to }} sur {{ total }} projets"
+    },
+    "filter": {
+      "all": "Tous les projets",
+      "commercial": "Commercial",
+      "residential": "Résidentiel",
+      "infrastructure": "Infrastructure"
+    }
+  },
+  "awards": {
+    "title": "Récompenses & Reconnaissances",
+    "subtitle": "Notre engagement envers l'excellence a été reconnu par de nombreuses récompenses",
+    "year": "Année",
+    "category": "Catégorie",
+    "loading": "Chargement des récompenses...",
+    "comingSoon": "Récompenses à venir bientôt !",
+    "seeAll": "Voir toutes les récompenses",
+    "none": "Aucune récompense disponible pour le moment.",
+    "stats": {
+      "industryAwards": "Récompenses de l'industrie",
+      "clientSatisfaction": "Satisfaction client",
+      "safetyRecord": "Bilan de sécurité",
+      "yearsExcellence": "Années d'excellence"
+    }
+  },
+  "about": {
+    "title": "À propos de ELZAHY GROUP",
+    "subtitle": "Depuis plus de deux décennies, ELZAHY GROUP est un leader dans la construction et l'ingénierie. Nous sommes spécialisés dans les infrastructures à grande échelle, transformant des visions ambitieuses en réalité avec précision et expertise.",
+    "features": {
+      "safety": "La sécurité d'abord",
+      "infrastructure": "Infrastructure",
+      "team": "Équipe d'experts",
+      "technology": "Technologie avancée"
+    },
+    "learnMore": "En savoir plus sur nous",
+    "imageAlt1": "Présentation du projet de construction ELZAHY GROUP 1",
+    "imageAlt2": "Présentation du projet de construction ELZAHY GROUP 2",
+    "imageAltGeneric": "Image de présentation du projet ELZAHY GROUP",
+    "mission": {
+      "title": "Notre mission",
+      "description": "Fournir des solutions de construction et d'ingénierie exceptionnelles qui dépassent les attentes de nos clients tout en contribuant au développement de communautés durables."
+    },
+    "vision": {
+      "title": "Notre vision",
+      "description": "Être la principale entreprise de construction et d'ingénierie de la région, reconnue pour son innovation, sa qualité et sa fiabilité."
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "integrity": "Intégrité",
+      "excellence": "Excellence",
+      "innovation": "Innovation",
+      "sustainability": "Durabilité"
+    },
+    "featuresCards": {
+      "infrastructure": {
+        "title": "Excellence en infrastructure",
+        "description": "Spécialisés dans les projets d'infrastructure à grande échelle avec des solutions d'ingénierie de pointe"
+      },
+      "team": {
+        "title": "Équipe d'experts",
+        "description": "Professionnels hautement qualifiés avec des décennies d'expérience combinée en construction et ingénierie"
+      },
+      "equipment": {
+        "title": "Équipement avancé",
+        "description": "Machines et outils à la pointe de la technologie assurant une exécution efficace et précise des projets"
+      },
+      "safety": {
+        "title": "La sécurité d'abord",
+        "description": "Engagement inébranlable envers les normes de sécurité et la responsabilité environnementale dans toutes les opérations"
+      }
+    },
+    "page": {
+      "story": {
+        "title": "Notre histoire",
+        "p1": "ELZAHY GROUP est à l'avant-garde de l'excellence en construction et en ingénierie depuis plus de deux décennies. Fondée avec une vision de transformer le paysage des infrastructures, nous sommes passés d'une petite entreprise de construction à une force leader dans les projets de développement à grande échelle.",
+        "p2": "Notre expertise s'étend de l'excavation, aux travaux de fondation, au développement d'infrastructures et aux solutions d'ingénierie complexes. Nous sommes fiers de livrer des projets qui non seulement répondent aux attentes des clients mais les dépassent, tout en maintenant les plus hauts standards de sécurité et de qualité.",
+        "p3": "Aujourd'hui, nous continuons à repousser les limites du possible dans la construction, en tirant parti de technologies de pointe et de méthodologies innovantes pour construire l'infrastructure de demain."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prenez contact avec notre équipe pour votre prochain projet",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "successDescription": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais.",
+      "error": "Échec de l'envoi du message. Veuillez réessayer.",
+      "errorDescription": "Échec de l'envoi du message. Veuillez réessayer plus tard.",
+      "required": "Ce champ est requis",
+      "emailInvalid": "Veuillez entrer une adresse email valide",
+      "nameMax": "Le nom complet doit comporter moins de 100 caractères",
+      "emailMax": "L'email doit comporter moins de 255 caractères",
+      "subjectMax": "Le sujet doit comporter moins de 200 caractères"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "addressTitle": "Notre bureau",
+      "emailTitle": "Envoyez-nous un email",
+      "phoneTitle": "Appelez-nous",
+      "hoursTitle": "Heures d'ouverture",
+      "address": "123 Avenue Construction, Ville Bâtiment, 45678",
+      "hours": {
+        "weekdays": "Lundi - Vendredi : 8h00 - 18h00",
+        "saturday": "Samedi : 9h00 - 14h00",
+        "sunday": "Dimanche : Fermé"
+      }
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Tableau de bord d'administration",
+      "welcome": "Bienvenue dans le panneau d'administration"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "ELZAHY GROUP",
+      "description": "Solutions de construction et d'ingénierie de premier plan au Moyen-Orient"
+    },
+    "links": {
+      "quickLinks": "Liens rapides",
+      "services": "Services",
+      "contact": "Coordonnées"
+    },
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "copyright": "© 2024 ELZAHY GROUP. Tous droits réservés."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "page": "page",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "results": "Résultats",
+    "noResults": "Aucun résultat trouvé",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins",
+    "readMore": "Lire plus",
+    "readLess": "Lire moins",
+    "ok": "OK",
+    "notSpecified": "Non spécifié",
+    "invalidDate": "Date invalide"
+  },
+  "cart": {
+    "items": "Vous avez {{count}} article(s) dans votre panier"
+  },
+  "meta": {
+    "home": {
+      "title": "ELZAHY GROUP - Excellence en ingénierie et construction",
+      "description": "Solutions de construction et d'ingénierie de premier plan au Moyen-Orient. Plus de 25 ans d'expérience dans la livraison de projets de qualité premium."
+    },
+    "projects": {
+      "title": "Nos projets - ELZAHY GROUP",
+      "description": "Explorez notre portefeuille de projets réussis en construction et ingénierie dans les secteurs commerciaux, résidentiels et d'infrastructure."
+    },
+    "awards": {
+      "title": "Récompenses et reconnaissances - ELZAHY GROUP",
+      "description": "Notre engagement envers l'excellence a été reconnu par de nombreuses récompenses en construction et ingénierie."
+    },
+    "about": {
+      "title": "À propos de nous - ELZAHY GROUP",
+      "description": "En savoir plus sur ELZAHY GROUP, votre partenaire de confiance en excellence de construction et d'ingénierie avec plus de 25 ans d'expérience."
+    },
+    "contact": {
+      "title": "Contactez-nous - ELZAHY GROUP",
+      "description": "Prenez contact avec notre équipe pour votre prochain projet de construction ou d'ingénierie. Nous sommes là pour aider à donner vie à votre vision."
+    }
+  },
+  "projectDetails": {
+    "loading": "Chargement des détails du projet...",
+    "buttons": {
+      "back": "Retour aux projets"
+    },
+    "client": "Client",
+    "noImage": "Aucune image disponible",
+    "gallery": {
+      "items": "éléments"
+    },
+    "info": {
+      "title": "Informations sur le projet",
+      "location": "Emplacement",
+      "propertyType": "Type de propriété",
+      "totalUnits": "Nombre total d'unités",
+      "projectArea": "Surface du projet",
+      "priceRange": "Fourchette de prix",
+      "status": "Statut",
+      "startDate": "Date de début",
+      "endDate": "Date d'achèvement"
+    },
+    "tech": {
+      "title": "Technologies et caractéristiques de construction"
+    },
+    "resources": {
+      "title": "Ressources du projet",
+      "companyWebsite": "Site web de l'entreprise",
+      "maps": "Voir sur la carte",
+      "projectWebsite": "Site web du projet"
+    },
+    "related": {
+      "title": "Projets connexes"
+    },
+    "meta": {
+      "title": "Détails du projet",
+      "created": "Créé le :",
+      "updated": "Dernière mise à jour :",
+      "createdBy": "Créé par :"
+    },
+    "errors": {
+      "invalidId": "ID de projet non trouvé",
+      "loadFailed": "Échec du chargement des détails du projet. Veuillez réessayer plus tard.",
+      "notFound": "Projet non trouvé ou non disponible pour consultation publique.",
+      "titleNotFound": "Projet non trouvé"
+    },
+    "price": {
+      "startingFrom": "À partir de",
+      "contact": "Contactez-nous pour le prix"
+    }
+  }
+}

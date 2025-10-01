@@ -2,21 +2,21 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
+        <div class="glass-card-dark rounded-[20px] md:rounded-[24px] p-6 sm:p-8 shadow-lg">
           <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 text-shadow">
             {{ 'about.title' | translate }}
           </h2>
           <p class="text-gray-300 leading-relaxed mb-6">
             {{ 'about.subtitle' | translate }}
           </p>
-          <div class="grid grid-cols-2 gap-6 mb-8 text-gray-200">
-            <div class="flex items-center gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 text-gray-200">
+            <div class="flex items-center gap-3 p-3 rounded-[10px] bg-white/5 backdrop-blur-sm">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
               {{ 'about.features.safety' | translate }}
             </div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 p-3 rounded-[10px] bg-white/5 backdrop-blur-sm">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
                 <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
                 <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
@@ -28,7 +28,7 @@
               </svg>
               {{ 'about.features.infrastructure' | translate }}
             </div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 p-3 rounded-[10px] bg-white/5 backdrop-blur-sm">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
@@ -37,21 +37,21 @@
               </svg>
               {{ 'about.features.team' | translate }}
             </div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 p-3 rounded-[10px] bg-white/5 backdrop-blur-sm">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
               </svg>
               {{ 'about.features.technology' | translate }}
             </div>
           </div>
-          <button routerLink="/about" class="glass-card hover:bg-white/20 text-white border-0 w-full sm:w-auto">
+          <button routerLink="/about" class="glass-card hover:bg-white/20 text-white border-0 w-full sm:w-auto rounded-[12px] px-5 py-2.5 shadow transition-all duration-300 hover:shadow-lg">
             {{ 'about.learnMore' | translate }}
           </button>
         </div>
       </div>
       <div class="relative h-80 lg:h-full w-full">
-        <img [src]="projectImages[0]" [alt]="'about.imageAlt1' | translate" [title]="'about.imageAlt1' | translate" loading="lazy" decoding="async" class="absolute top-0 left-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-lg" />
-        <img [src]="projectImages[1]" [alt]="'about.imageAlt2' | translate" [title]="'about.imageAlt2' | translate" loading="lazy" decoding="async" class="absolute bottom-0 right-0 w-2/3 h-2/3 object-cover rounded-2xl shadow-lg" />
+        <img [src]="projectImages[0]" alt="{{ 'about.imageAlt1' | translate }}" title="{{ 'about.imageAlt1' | translate }}" loading="lazy" decoding="async" class="absolute top-0 left-0 w-2/3 h-2/3 object-cover rounded-[16px] md:rounded-[20px] lg:rounded-[24px] shadow-lg" />
+        <img [src]="projectImages[1]" alt="{{ 'about.imageAlt2' | translate }}" title="{{ 'about.imageAlt2' | translate }}" loading="lazy" decoding="async" class="absolute bottom-0 right-0 w-2/3 h-2/3 object-cover rounded-[16px] md:rounded-[20px] lg:rounded-[24px] shadow-lg" />
       </div>
     </div>
   </div>
@@ -59,19 +59,9 @@
 
 <section id="about" class="py-20 content-bg-wrap" *ngIf="isPage">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 text-shadow">
-        {{ 'about.title' | translate }}
-      </h2>
-      <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-        {{ 'about.subtitle' | translate }}
-      </p>
-      <div class="section-divider mt-8"></div>
-    </div>
-
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
       <div class="space-y-6">
-        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 h-full">
+        <div class="glass-card-dark rounded-[16px] md:rounded-[20px] lg:rounded-[24px] p-6 sm:p-8 h-full shadow-lg">
           <h3 class="text-3xl font-bold text-white mb-6">{{ 'about.page.story.title' | translate }}</h3>
           <p class="text-gray-300 leading-relaxed mb-4">
             {{ 'about.page.story.p1' | translate }}
@@ -85,16 +75,16 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
-        <div *ngFor="let image of projectImages" class="glass-card-dark rounded-xl overflow-hidden">
-          <img [src]="image" [alt]="'about.imageAltGeneric' | translate" [title]="'about.imageAltGeneric' | translate" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div *ngFor="let image of projectImages" class="glass-card-dark rounded-[16px] overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+          <img [src]="image" alt="{{ 'about.imageAltGeneric' | translate }}" title="{{ 'about.imageAltGeneric' | translate }}" loading="lazy" decoding="async" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-      <div *ngFor="let feature of features" class="glass-card-dark rounded-2xl p-6 text-center h-full">
-        <div class="glass-effect-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-16">
+      <div *ngFor="let feature of features" class="glass-card-dark rounded-[16px] md:rounded-[20px] p-6 text-center h-full shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="glass-effect-dark rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-inner">
           <svg *ngIf="feature.icon === 'building-2'" class="w-8 h-8 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
             <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
@@ -127,7 +117,7 @@
     </div>
 
     <div class="text-center">
-      <div class="glass-card-dark rounded-3xl p-8 sm:p-12">
+      <div class="glass-card-dark rounded-[18px] sm:rounded-[22px] md:rounded-[26px] lg:rounded-[30px] p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl">
         <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6">
           {{ 'home.hero.title' | translate }}
         </h3>
@@ -135,7 +125,7 @@
           {{ 'home.hero.subtitle' | translate }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button routerLink="/contact" class="glass-card hover:bg-white/20 text-white border-0 px-8 py-4">
+          <button routerLink="/contact" class="glass-card hover:bg-white/20 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 rounded-[14px] shadow-md hover:shadow-lg transition-all duration-300">
             {{ 'home.hero.cta' | translate }}
           </button>
         </div>

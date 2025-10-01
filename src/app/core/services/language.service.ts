@@ -4,8 +4,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { registerLocaleData } from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import localeAr from '@angular/common/locales/ar';
+import localeDe from '@angular/common/locales/de';
+import localeFr from '@angular/common/locales/fr';
 
-export type SupportedLanguage = 'en' | 'ar';
+export type SupportedLanguage = 'en' | 'ar' | 'de' | 'fr';
 
 export interface LanguageOption {
   code: SupportedLanguage;
@@ -38,6 +40,18 @@ export class LanguageService {
       name: 'Arabic',
       nativeName: 'العربية',
       dir: 'rtl'
+    },
+    {
+      code: 'de',
+      name: 'German',
+      nativeName: 'Deutsch',
+      dir: 'ltr'
+    },
+    {
+      code: 'fr',
+      name: 'French',
+      nativeName: 'Français',
+      dir: 'ltr'
     }
   ];
 
@@ -66,6 +80,8 @@ export class LanguageService {
   private registerLocales(): void {
     registerLocaleData(localeEn, 'en');
     registerLocaleData(localeAr, 'ar');
+    registerLocaleData(localeDe, 'de');
+    registerLocaleData(localeFr, 'fr');
   }
 
   private getSavedLanguage(): SupportedLanguage | null {
@@ -87,7 +103,7 @@ export class LanguageService {
   }
 
   private isSupportedLanguage(lang: string | null): lang is SupportedLanguage {
-    return lang === 'en' || lang === 'ar';
+    return lang === 'en' || lang === 'ar' || lang === 'de' || lang === 'fr';
   }
 
   getCurrentLanguage(): SupportedLanguage {
@@ -101,7 +117,12 @@ export class LanguageService {
 
   getCurrentLocale(): string {
     const currentLang = this.getCurrentLanguage();
-    return currentLang === 'ar' ? 'ar-SA' : 'en-US';
+    switch (currentLang) {
+      case 'ar': return 'ar-SA';
+      case 'de': return 'de-DE';
+      case 'fr': return 'fr-FR';
+      default: return 'en-US';
+    }
   }
 
   setLanguage(language: SupportedLanguage): void {

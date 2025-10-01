@@ -30,7 +30,7 @@
           [routerLink]="item.path"
           routerLinkActive="nav-link-active !text-gray-800"
           [routerLinkActiveOptions]="{exact: true}"
-          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white rounded-l rounded-r "
+          class="font-medium transition-all duration-200 px-4 py-2 rounded-[4px] text-gray-200 hover:bg-white/20 hover:text-white hover:shadow-md"
           (mouseenter)="onLinkHover(item.path, true)"
           (mouseleave)="onLinkHover(item.path, false)"
         >
@@ -44,7 +44,7 @@
           *ngIf="isAuthenticated && isAdmin"
           routerLink="/admin/dashboard"
           routerLinkActive="nav-link-active !text-gray-800"
-          class="font-medium transition-colors duration-200 px-4 py-2 rounded-lg text-gray-200 hover:bg-white/20 hover:text-white"
+          class="font-medium transition-all duration-200 px-4 py-2 rounded-[4px] text-gray-200 hover:bg-white/20 hover:text-white hover:shadow-md"
         >
           <span class="flex items-center space-x-1">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -79,7 +79,7 @@
         </div>
 
         <div class="pl-4">
-          <a routerLink="/contact" class="glass-effect hover:bg-white/30 text-white border-white/20 font-semibold btn transition-all duration-300 hover:scale-105">{{ 'nav.contact' | translate }}</a>
+          <a routerLink="/contact" class="glass-effect hover:bg-white/30 text-white border-0 font-semibold btn transition-all duration-300 hover:scale-105 rounded-[4px] shadow-md hover:shadow-lg">{{ 'nav.contact' | translate }}</a>
         </div>
       </div>
 
@@ -157,7 +157,7 @@
         <app-language-switcher></app-language-switcher>
       </div>
 
-      <a routerLink="/contact" (click)="closeMobileMenu()" class="w-full glass-effect hover:bg-white/30 text-white border-white/20 mt-4 font-semibold btn transition-all duration-300 hover:scale-105">{{ 'nav.contact' | translate }}</a>
+      <a routerLink="/contact" (click)="closeMobileMenu()" class="w-full glass-effect hover:bg-white/30 text-white border-0 mt-4 font-semibold btn transition-all duration-300 hover:scale-105 rounded-[4px] shadow-md hover:shadow-lg">{{ 'nav.contact' | translate }}</a>
     </div>
   </div>
 </nav>

@@ -1,0 +1,319 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "awards": "Auszeichnungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "dashboard": "Dashboard",
+    "logout": "Abmelden",
+    "toggleMenu": "Menü umschalten",
+    "closeMenu": "Menü schließen",
+    "openMenu": "Menü öffnen"
+  },
+  "header": {
+    "companyName": "ELZAHY GROUP",
+    "companyLogo": "ELZAHY GROUP Logo"
+  },
+  "language": {
+    "switch": "Sprache wechseln",
+    "english": "Englisch",
+    "arabic": "Arabisch",
+    "german": "Deutsch",
+    "french": "Französisch",
+    "current": "Aktuelle Sprache"
+  },
+  "home": {
+    "hero": {
+      "title": "Bereit, etwas Unglaubliches zu bauen?",
+      "subtitle": "Lassen Sie uns Ihr nächstes Bauprojekt besprechen und entdecken, wie ELZAHY GROUP Ihre Vision mit unserer Expertise und Hingabe zum Leben erwecken kann.",
+      "cta": "Starten Sie Ihr Projekt",
+      "backgroundAlt": "Hintergrund des Bauprojekts von ELZAHY GROUP"
+    },
+    "features": {
+      "experience": {
+        "title": "25+ Jahre Erfahrung",
+        "description": "Über zwei Jahrzehnte herausragender Bauprojekte"
+      },
+      "quality": {
+        "title": "Premium Qualität",
+        "description": "Verpflichtung zu höchsten Standards in jedem Projekt"
+      },
+      "innovation": {
+        "title": "Innovationsfokus",
+        "description": "Einsatz modernster Technologie und Bautechniken"
+      }
+    }
+  },
+  "projects": {
+    "title": "Unsere Projekte",
+    "subtitle": "Entdecken Sie unser Portfolio erfolgreicher Bau- und Ingenieurprojekte",
+    "viewProject": "Projekt ansehen",
+    "viewDetails": "Objektdetails anzeigen",
+    "viewAll": "Alle Projekte anzeigen",
+    "loadMore": "Mehr Projekte laden",
+    "noProjects": "Derzeit keine Projekte verfügbar",
+    "error": "Projekte konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
+    "invalidData": "Ungültiges Datenformat vom Server erhalten",
+    "imageAlt": "Bild der Immobilie für {{ name }}",
+    "imageTitle": "Klicken für Details",
+    "tabs": {
+      "completed": "Abgeschlossene Projekte",
+      "available": "Verfügbare Projekte",
+      "upcoming": "Kommende Projekte"
+    },
+    "status": {
+      "available": "Verfügbar",
+      "upcoming": "Kommend",
+      "completed": "Abgeschlossen"
+    },
+    "notSpecified": "Nicht angegeben",
+    "info": {
+      "areaUnit": "m²",
+      "units": "Einheiten",
+      "photos": "Fotos",
+      "videos": "Videos",
+      "featured": "Ausgewählt"
+    },
+    "pagination": {
+      "showing": "Zeige {{ from }} - {{ to }} von {{ total }} Projekten"
+    },
+    "filter": {
+      "all": "Alle Projekte",
+      "commercial": "Gewerbe",
+      "residential": "Wohnen",
+      "infrastructure": "Infrastruktur"
+    }
+  },
+  "awards": {
+    "title": "Auszeichnungen & Anerkennung",
+    "subtitle": "Unser Engagement für Exzellenz wurde mit zahlreichen Auszeichnungen gewürdigt",
+    "year": "Jahr",
+    "category": "Kategorie",
+    "loading": "Lade Auszeichnungen...",
+    "comingSoon": "Auszeichnungen folgen bald!",
+    "seeAll": "Alle ansehen",
+    "none": "Noch keine Auszeichnungen verfügbar.",
+    "stats": {
+      "industryAwards": "Branchen-Auszeichnungen",
+      "clientSatisfaction": "Kundenzufriedenheit",
+      "safetyRecord": "Sicherheitsbilanz",
+      "yearsExcellence": "Jahre Exzellenz"
+    }
+  },
+  "about": {
+    "title": "Über ELZAHY GROUP",
+    "subtitle": "Seit über zwei Jahrzehnten ist ELZAHY GROUP führend im Bauwesen und Ingenieurwesen. Wir spezialisieren uns auf groß angelegte Infrastruktur und verwandeln ehrgeizige Visionen mit Präzision und Fachwissen in die Realität.",
+    "features": {
+      "safety": "Sicherheit zuerst",
+      "infrastructure": "Infrastruktur",
+      "team": "Expertenteam",
+      "technology": "Fortschrittliche Technologie"
+    },
+    "learnMore": "Mehr über uns erfahren",
+    "imageAlt1": "Projektpräsentation 1 von ELZAHY GROUP",
+    "imageAlt2": "Projektpräsentation 2 von ELZAHY GROUP",
+    "imageAltGeneric": "Projektpräsentationsbild von ELZAHY GROUP",
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Außergewöhnliche Bau- und Ingenieurlösungen zu liefern, die die Erwartungen unserer Kunden übertreffen und zur Entwicklung nachhaltiger Gemeinschaften beitragen."
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "description": "Die führende Bau- und Ingenieurgesellschaft der Region zu sein, bekannt für Innovation, Qualität und Zuverlässigkeit."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "integrity": "Integrität",
+      "excellence": "Exzellenz",
+      "innovation": "Innovation",
+      "sustainability": "Nachhaltigkeit"
+    },
+    "featuresCards": {
+      "infrastructure": {
+        "title": "Infrastruktur-Exzellenz",
+        "description": "Spezialisiert auf groß angelegte Infrastrukturprojekte mit modernsten Ingenieurlösungen"
+      },
+      "team": {
+        "title": "Expertenteam",
+        "description": "Hochqualifizierte Fachkräfte mit jahrzehntelanger gemeinsamer Erfahrung im Bau- und Ingenieurwesen"
+      },
+      "equipment": {
+        "title": "Fortschrittliche Ausrüstung",
+        "description": "Hocheffiziente und präzise Projektumsetzung mit modernster Maschinentechnik"
+      },
+      "safety": {
+        "title": "Sicherheit zuerst",
+        "description": "Unerschütterliches Engagement für Sicherheitsstandards und Umweltverantwortung in allen Betriebsabläufen"
+      }
+    },
+    "page": {
+      "story": {
+        "title": "Unsere Geschichte",
+        "p1": "ELZAHY GROUP steht seit über zwei Jahrzehnten an der Spitze von Bau- und Ingenieur-Exzellenz. Gegründet mit der Vision, die Infrastruktur-Landschaft zu transformieren, haben wir uns von einem kleinen Bauunternehmen zu einer führenden Kraft in groß angelegten Entwicklungsprojekten entwickelt.",
+        "p2": "Unser Fachwissen reicht von Aushub, Fundamentarbeiten, Infrastrukturentwicklung bis hin zu komplexen Ingenieurlösungen. Wir sind stolz darauf, Projekte zu liefern, die die Erwartungen der Kunden nicht nur erfüllen, sondern übertreffen, während wir die höchsten Sicherheits- und Qualitätsstandards einhalten.",
+        "p3": "Heute nutzen wir modernste Technologie und innovative Methodiken, um die Infrastruktur von morgen zu bauen."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Nehmen Sie Kontakt mit unserem Team auf für Ihr nächstes Projekt",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "company": "Unternehmen",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "send": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "successDescription": "Danke für Ihre Kontaktaufnahme. Wir melden uns umgehend bei Ihnen.",
+      "error": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "errorDescription": "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+      "required": "Dieses Feld ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "nameMax": "Name darf nicht mehr als 100 Zeichen haben",
+      "emailMax": "E-Mail darf nicht mehr als 255 Zeichen haben",
+      "subjectMax": "Betreff darf nicht mehr als 200 Zeichen haben"
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "addressTitle": "Unser Büro",
+      "emailTitle": "E-Mail schreiben",
+      "phoneTitle": "Anrufen",
+      "hoursTitle": "Geschäftszeiten",
+      "address": "123 Construction Ave, Building City, 45678",
+      "hours": {
+        "weekdays": "Montag - Freitag: 8:00 - 18:00 Uhr",
+        "saturday": "Samstag: 9:00 - 14:00 Uhr",
+        "sunday": "Sonntag: Geschlossen"
+      }
+    }
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Admin-Dashboard",
+      "welcome": "Willkommen im Admin-Bereich"
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "ELZAHY GROUP",
+      "description": "Führende Bau- und Ingenieurlösungen im gesamten Nahen Osten"
+    },
+    "links": {
+      "quickLinks": "Schnelllinks",
+      "services": "Dienstleistungen",
+      "contact": "Kontaktinformationen"
+    },
+    "rights": "Alle Rechte vorbehalten",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "copyright": "© 2024 ELZAHY GROUP. Alle Rechte vorbehalten."
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Wiederholen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "page": "Seite",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Ansehen",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filter",
+    "sort": "Sortieren",
+    "results": "Ergebnisse",
+    "noResults": "Keine Ergebnisse gefunden",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "readMore": "Mehr lesen",
+    "readLess": "Weniger lesen",
+    "ok": "OK",
+    "notSpecified": "Nicht angegeben",
+    "invalidDate": "Ungültiges Datum"
+  },
+  "cart": {
+    "items": "Sie haben {{count}} Artikel in Ihrem Warenkorb"
+  },
+  "meta": {
+    "home": {
+      "title": "ELZAHY GROUP - Exzellenz im Ingenieur- und Bauwesen",
+      "description": "Führende Bau- und Ingenieurlösungen im gesamten Nahen Osten. Mehr als 25 Jahre Erfahrung in der Bereitstellung von Projekten höchster Qualität."
+    },
+    "projects": {
+      "title": "Unsere Projekte - ELZAHY GROUP",
+      "description": "Entdecken Sie unser Portfolio erfolgreicher Bau- und Ingenieurprojekte in den Bereichen Gewerbe, Wohnen und Infrastruktur."
+    },
+    "awards": {
+      "title": "Auszeichnungen & Anerkennung - ELZAHY GROUP",
+      "description": "Unser Engagement für Exzellenz wurde mit zahlreichen Auszeichnungen im Bau- und Ingenieurwesen gewürdigt."
+    },
+    "about": {
+      "title": "Über uns - ELZAHY GROUP",
+      "description": "Erfahren Sie mehr über ELZAHY GROUP, Ihren vertrauenswürdigen Partner für Exzellenz im Bau- und Ingenieurwesen mit über 25 Jahren Erfahrung."
+    },
+    "contact": {
+      "title": "Kontakt - ELZAHY GROUP",
+      "description": "Kontaktieren Sie unser Team für Ihr nächstes Bau- oder Ingenieurprojekt. Wir helfen Ihnen dabei, Ihre Vision zu verwirklichen."
+    }
+  },
+  "projectDetails": {
+    "loading": "Lade Projektdetails...",
+    "buttons": {
+      "back": "Zurück zu Projekten"
+    },
+    "client": "Kunde",
+    "noImage": "Kein Bild verfügbar",
+    "gallery": {
+      "items": "Elemente"
+    },
+    "info": {
+      "title": "Projektinformationen",
+      "location": "Standort",
+      "propertyType": "Immobilientyp",
+      "totalUnits": "Gesamtzahl der Einheiten",
+      "projectArea": "Projektfläche",
+      "priceRange": "Preisbereich",
+      "status": "Status",
+      "startDate": "Startdatum",
+      "endDate": "Fertigstellungsdatum"
+    },
+    "tech": {
+      "title": "Bautechnologien & Merkmale"
+    },
+    "resources": {
+      "title": "Projekt-Ressourcen",
+      "companyWebsite": "Unternehmenswebsite",
+      "maps": "Auf Karten anzeigen",
+      "projectWebsite": "Projektwebsite"
+    },
+    "related": {
+      "title": "Ähnliche Projekte"
+    },
+    "meta": {
+      "title": "Projektdetails",
+      "created": "Erstellt:",
+      "updated": "Zuletzt aktualisiert:",
+      "createdBy": "Erstellt von:"
+    },
+    "errors": {
+      "invalidId": "Projekt-ID nicht gefunden",
+      "loadFailed": "Projektdetails konnten nicht geladen werden. Bitte versuchen Sie es später erneut.",
+      "notFound": "Projekt nicht gefunden oder nicht für die öffentliche Ansicht verfügbar.",
+      "titleNotFound": "Projekt nicht gefunden"
+    },
+    "price": {
+      "startingFrom": "Ab",
+      "contact": "Preis auf Anfrage"
+    }
+  }
+}

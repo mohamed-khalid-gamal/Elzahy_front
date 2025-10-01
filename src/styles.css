@@ -90,6 +90,7 @@ body {
 .nav-link-active {
   color: #1a202c !important;
   background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
 }
 
 .content-bg-wrap {

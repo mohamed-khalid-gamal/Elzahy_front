@@ -19,6 +19,8 @@
     "switch": "Switch Language",
     "english": "English",
     "arabic": "Arabic",
+    "french": "French",
+    "german": "German",
     "current": "Current Language"
   },
   "home": {
@@ -47,13 +49,13 @@
     "title": "Our Projects",
     "subtitle": "Explore our portfolio of successful construction and engineering projects",
     "viewProject": "View Project",
-    "viewDetails": "View Property Details",
+    "viewDetails": "View Construction Details",
     "viewAll": "View All Projects",
     "loadMore": "Load More Projects",
     "noProjects": "No projects available at the moment",
     "error": "Failed to load projects. Please try again later.",
     "invalidData": "Invalid data format received from server",
-    "imageAlt": "Property image for {{ name }}",
+    "imageAlt": "Construction project image for {{ name }}",
     "imageTitle": "Click to view details",
     "tabs": {
       "completed": "Completed Projects",
@@ -277,7 +279,7 @@
     "info": {
       "title": "Project Information",
       "location": "Location",
-      "propertyType": "Property Type",
+      "propertyType": "Construction Type",
       "totalUnits": "Total Units",
       "projectArea": "Project Area",
       "priceRange": "Price Range",

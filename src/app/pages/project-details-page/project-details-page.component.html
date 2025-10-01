@@ -9,18 +9,18 @@
 
   <!-- Error state -->
   <div *ngIf="error && !loading" class="flex items-center justify-center min-h-screen ">
-    <div class="text-center py-23 pb-8 glass-card-dark rounded-xl max-w-md mx-4">
+    <div class="text-center py-16 pb-8 glass-card-dark rounded-[18px] sm:rounded-[22px] max-w-md mx-4 shadow-xl">
       <div class="text-red-400 text-6xl mb-4">⚠️</div>
       <p class="text-red-400 text-lg mb-6">{{ error }}</p>
-      <div class="space-x-4">
+      <div class="space-y-3 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center">
         <button
           (click)="goBack()"
-          class="glass-card-dark hover:bg-white/20 text-white border-0 px-6 py-3 btn transition-all duration-300">
+          class="glass-card-dark hover:bg-white/20 text-white border-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-[14px] shadow-md hover:shadow-lg btn transition-all duration-300">
           {{ 'projectDetails.buttons.back' | translate }}
         </button>
         <button
           (click)="retryLoadProject()"
-          class="bg-blue-600 hover:bg-blue-700 text-white border-0 px-6 py-3 btn transition-all duration-300">
+          class="bg-blue-600 hover:bg-blue-700 text-white border-0 px-4 sm:px-6 py-2.5 sm:py-3 rounded-[14px] shadow-md hover:shadow-lg btn transition-all duration-300">
           {{ 'common.retry' | translate }}
         </button>
       </div>
@@ -34,7 +34,7 @@
     <div class="mb-8" [@fadeInUp]>
       <button
         (click)="goBack()"
-        class="glass-card-dark hover:bg-white/20 text-white border-0 px-4 py-2 btn transition-all duration-300 flex items-center">
+        class="glass-card-dark hover:bg-white/20 text-white border-0 px-4 py-2 rounded-[14px] shadow-md hover:shadow-lg btn transition-all duration-300 flex items-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
@@ -42,7 +42,7 @@
       </button>
     </div>
     <!-- Hero section with image/video gallery and title -->
-    <div class="glass-card-dark rounded-2xl overflow-hidden mb-8" [@fadeInUp]>
+    <div class="glass-card-dark rounded-[18px] md:rounded-[22px] overflow-hidden mb-8 shadow-xl" [@fadeInUp]>
       <!-- Project Gallery (Images + Videos) or Single Item -->
       <div class="relative">
         <!-- Enhanced Media Gallery -->
@@ -58,7 +58,7 @@
             <!-- Overlay for project title if single item -->
             <div *ngIf="!hasMultipleGalleryItems(project)" class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-b-lg">
               <div class="flex flex-wrap items-center gap-4 mb-4">
-                <span [class]="'px-3 py-1 rounded-full text-sm font-medium border ' + getProjectStatusClass(project.status)">
+                <span [class]="'px-3 py-1 rounded-full text-sm font-medium shadow-sm ' + getProjectStatusClass(project.status)">
                   {{ getProjectStatusLabel(project.status) }}
                 </span>
                 <span *ngIf="project.client" class="glass-effect px-3 py-1 rounded-full text-sm font-medium text-gray-100">
@@ -142,7 +142,7 @@
       <div class="lg:col-span-2 space-y-8">
 
         <!-- Project Information -->
-        <div class="glass-card-dark rounded-xl p-6" [@slideIn]>
+        <div class="glass-card-dark rounded-[18px] p-6 shadow-lg" [@slideIn]>
           <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -202,7 +202,7 @@
         </div>
 
         <!-- Construction Technologies / Amenities -->
-        <div *ngIf="getProjectTechnologies(project).length > 0" class="glass-card-dark rounded-xl p-6" [@slideIn]>
+        <div *ngIf="getProjectTechnologies(project).length > 0" class="glass-card-dark rounded-[18px] p-6 shadow-lg" [@slideIn]>
           <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -213,14 +213,14 @@
           <div class="flex flex-wrap gap-3" [@staggerIn]>
             <span
               *ngFor="let tech of getProjectTechnologies(project)"
-              class="glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-100 hover:bg-white/20 transition-colors duration-300">
+              class="glass-effect px-4 py-2 rounded-full text-sm font-medium text-gray-100 hover:bg-white/20 transition-colors duration-300 shadow-sm hover:shadow">
               {{ tech }}
             </span>
           </div>
         </div>
 
         <!-- Project Links -->
-        <div *ngIf="project.companyUrl || project.googleMapsUrl || project.projectUrl" class="glass-card-dark rounded-xl p-6" [@slideIn]>
+        <div *ngIf="project.companyUrl || project.googleMapsUrl || project.projectUrl" class="glass-card-dark rounded-[18px] p-6 shadow-lg" [@slideIn]>
           <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 0 0-5.656 0l-4 4a4 4 0 1 0 5.656 5.656l1.102-1.101m-.758-4.899a4 4 0 0 0 5.656 0l4-4a4 4 0 0 0-5.656-5.656l-1.1 1.1"/>
@@ -232,7 +232,7 @@
             <button
               *ngIf="project.companyUrl"
               (click)="openCompanyUrl(project.companyUrl)"
-              class="bg-blue-600 hover:bg-blue-700 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center">
+              class="bg-blue-600 hover:bg-blue-700 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center rounded-[14px] shadow-md hover:shadow-lg">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
               </svg>
@@ -242,7 +242,7 @@
             <button
               *ngIf="project.googleMapsUrl"
               (click)="openGoogleMaps(project.googleMapsUrl)"
-              class="bg-green-600 hover:bg-green-700 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center">
+              class="bg-green-600 hover:bg-green-700 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center rounded-[14px] shadow-md hover:shadow-lg">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -253,7 +253,7 @@
             <button
               *ngIf="project.projectUrl"
               (click)="openProjectUrl(project.projectUrl)"
-              class="glass-card-dark hover:bg-white/20 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center">
+              class="glass-card-dark hover:bg-white/20 text-white border-0 px-6 py-3 btn transition-all duration-300 flex items-center rounded-[14px] shadow-md hover:shadow-lg">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/>
               </svg>
@@ -267,14 +267,14 @@
       <div class="space-y-8">
 
         <!-- Related Projects -->
-        <div *ngIf="relatedProjects.length > 0" class="glass-card-dark rounded-xl p-6" [@slideIn]>
+        <div *ngIf="relatedProjects.length > 0" class="glass-card-dark rounded-[18px] p-6 shadow-lg" [@slideIn]>
           <h2 class="text-xl font-bold text-white mb-6">{{ 'projectDetails.related.title' | translate }}</h2>
 
           <div class="space-y-4" [@staggerIn]>
             <div
               *ngFor="let relatedProject of relatedProjects"
               (click)="navigateToRelatedProject(relatedProject.id)"
-              class="glass-effect rounded-lg p-4 cursor-pointer hover:bg-white/10 transition-all duration-300 group">
+              class="glass-effect rounded-[14px] p-4 cursor-pointer hover:bg-white/10 transition-all duration-300 group shadow-sm hover:shadow-md">
 
               <div class="flex space-x-3">
                 <img
@@ -282,7 +282,7 @@
                   [alt]="relatedProject.name"
                   [title]="relatedProject.name + ' - ' + ('projects.imageTitle' | translate)"
                   (error)="$event.target.src='/public/no-image.svg'"
-                  class="w-16 h-12 object-cover rounded"
+                  class="w-16 h-12 object-cover rounded-[10px]"
                 />
                 <div class="flex-1 min-w-0">
                   <h3 class="text-white font-medium group-hover:text-blue-300 transition-colors duration-300 truncate">

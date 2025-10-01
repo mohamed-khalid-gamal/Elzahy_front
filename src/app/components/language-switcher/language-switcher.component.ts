@@ -139,7 +139,9 @@ export class LanguageSwitcherComponent implements OnInit, OnDestroy {
   getLanguageFlag(language: SupportedLanguage): string {
     const flags: Record<SupportedLanguage, string> = {
       'en': '🇺🇸',
-      'ar': '🇸🇦'
+      'ar': '🇸🇦',
+      'de': '🇩🇪',
+      'fr': '🇫🇷'
     };
     return flags[language] || '🌐';
   }

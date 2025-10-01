@@ -6,7 +6,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <div class="glass-card-dark rounded-2xl p-6 sm:p-8 h-full">
+          <div class="glass-card-dark rounded-[18px] md:rounded-[22px] p-6 sm:p-8 h-full shadow-xl">
             <h2 class="text-2xl font-bold text-white mb-6">{{ 'contact.title' | translate }}</h2>
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -19,7 +19,7 @@
                     [placeholder]="'contact.form.name' | translate"
                     required
                     maxlength="100"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
+                    class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                   />
                   <div *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched" class="text-red-400 text-sm mt-1">
                     <span *ngIf="form.get('fullName')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
@@ -35,7 +35,7 @@
                     [placeholder]="'contact.form.email' | translate"
                     required
                     maxlength="255"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
+                    class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                   />
                   <div *ngIf="form.get('emailAddress')?.invalid && form.get('emailAddress')?.touched" class="text-red-400 text-sm mt-1">
                     <span *ngIf="form.get('emailAddress')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
@@ -52,7 +52,7 @@
                     type="tel"
                     formControlName="phoneNumber"
                     [placeholder]="'contact.form.phone' | translate"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
+                    class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                   />
                 </div>
                 <div>
@@ -62,7 +62,7 @@
                     type="text"
                     formControlName="company"
                     [placeholder]="'contact.form.company' | translate"
-                    class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
+                    class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                   />
                 </div>
               </div>
@@ -75,7 +75,7 @@
                   [placeholder]="'contact.form.subject' | translate"
                   required
                   maxlength="200"
-                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r "
+                  class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                 />
                 <div *ngIf="form.get('subject')?.invalid && form.get('subject')?.touched" class="text-red-400 text-sm mt-1">
                   <span *ngIf="form.get('subject')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
@@ -90,7 +90,7 @@
                   [placeholder]="'contact.form.message' | translate"
                   required
                   rows="5"
-                  class="mt-2 bg-white/10 text-white border-white/20 placeholder:text-gray-400 w-full rounded-md px-3 py-2 rounded-l rounded-r"
+                  class="mt-2 bg-white/10 text-white border-0 border-b border-white/10 placeholder:text-gray-400 w-full rounded-[12px] px-4 py-3 shadow-inner"
                 ></textarea>
                 <div *ngIf="form.get('message')?.invalid && form.get('message')?.touched" class="text-red-400 text-sm mt-1">
                   <span *ngIf="form.get('message')?.errors?.['required']">{{ 'contact.form.required' | translate }}</span>
@@ -100,7 +100,7 @@
                 <button
                   type="submit"
                   [disabled]="form.invalid || isSubmitting"
-                  class="w-full glass-card hover:bg-white/20 text-white border-0 px-4 py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  class="w-full glass-card hover:bg-white/20 text-white border-0 px-4 py-3 rounded-[14px] shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span *ngIf="!isSubmitting">{{ 'contact.form.send' | translate }}</span>
                   <span *ngIf="isSubmitting" class="flex items-center justify-center">
@@ -116,7 +116,7 @@
           </div>
         </div>
         <div class="space-y-8">
-          <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
+          <div class="glass-card-dark rounded-[18px] md:rounded-[22px] p-6 sm:p-8 shadow-xl">
             <h3 class="text-2xl font-bold text-white mb-6">{{ 'contact.info.title' | translate }}</h3>
             <div class="space-y-6">
               <div class="flex items-start space-x-4">
@@ -156,7 +156,7 @@
               </div>
             </div>
           </div>
-          <div class="glass-card-dark rounded-2xl p-6 sm:p-8">
+          <div class="glass-card-dark rounded-[18px] md:rounded-[22px] p-6 sm:p-8 shadow-xl">
             <h3 class="text-2xl font-bold text-white mb-4">{{ 'contact.info.hoursTitle' | translate }}</h3>
             <div class="text-gray-300 space-y-2">
               <p>{{ 'contact.info.hours.weekdays' | translate }}</p>

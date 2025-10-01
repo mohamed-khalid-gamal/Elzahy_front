@@ -109,7 +109,7 @@ export class ProjectDetailsPageComponent implements OnInit, OnDestroy {
   loadRelatedProjects() {
     if (!this.project) return;
 
-    // Load other published projects with the same status and property type
+    // Load other published projects with the same status and construction type
     const filters = {
       status: this.project.status,
       isPublished: true,

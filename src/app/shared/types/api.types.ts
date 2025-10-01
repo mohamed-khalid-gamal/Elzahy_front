@@ -253,7 +253,7 @@ export interface ProjectDto {
   // Project Status and Type
   status: ProjectStatus; // Current, Future, Past
 
-  // Real Estate Specific Fields
+  // Construction Specific Fields
   companyUrl?: string; // Company project page URL
   googleMapsUrl?: string; // Google Maps location URL
   location?: string; // Project location

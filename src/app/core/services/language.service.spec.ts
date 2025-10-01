@@ -42,9 +42,11 @@ describe('LanguageService', () => {
 
   it('should return supported languages', () => {
     const supportedLanguages = service.supportedLanguages;
-    expect(supportedLanguages).toHaveSize(2);
+    expect(supportedLanguages).toHaveSize(4);
     expect(supportedLanguages.find(lang => lang.code === 'en')).toBeTruthy();
     expect(supportedLanguages.find(lang => lang.code === 'ar')).toBeTruthy();
+    expect(supportedLanguages.find(lang => lang.code === 'de')).toBeTruthy();
+    expect(supportedLanguages.find(lang => lang.code === 'fr')).toBeTruthy();
   });
 
   it('should set language and update localStorage', () => {
@@ -151,19 +153,22 @@ describe('LanguageService', () => {
 
   it('should handle missing localStorage gracefully', () => {
     // Mock localStorage as undefined (SSR scenario)
-    (global as any).localStorage = undefined;
+    // @ts-ignore
+    (globalThis as any).localStorage = undefined;
 
     expect(() => service.setLanguage('ar')).not.toThrow();
   });
 
   it('should handle missing document gracefully', () => {
     // Mock document as undefined (SSR scenario)
-    const originalDocument = global.document;
-    (global as any).document = undefined;
+    const originalDocument = globalThis.document;
+    // @ts-ignore
+    (globalThis as any).document = undefined;
 
     expect(() => service.setLanguage('ar')).not.toThrow();
 
     // Restore document
-    (global as any).document = originalDocument;
+    // @ts-ignore
+    (globalThis as any).document = originalDocument;
   });
 });
